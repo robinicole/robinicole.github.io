@@ -1,11 +1,4 @@
 # main links
 main:
   - title: "Reading list"
-  - url: /reading-list/
-    # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
-  #  url: /Blogs/
+    url: /reading_list/

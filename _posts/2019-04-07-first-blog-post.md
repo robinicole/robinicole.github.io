@@ -1,11 +1,14 @@
 ---
 layout: posts
 author: jill
-title: This is the first post of my blog
+title: Supporting Latex in a Jekyll Blog
 ---
-This is a first post to check how markdown works in jekyll
-```python
-import pandas as pd
+Just after I set up this Blog with Jekyll, I wanted to use $$\LaTeX$$ to write maths but this is not shipped with the minimal-mistakes theme I use for Jekyll. A nice trick I found on the website of Ian Goodfellow  [here](http://www.iangoodfellow.com/blog/jekyll/markdown/tex/2016/11/07/latex-in-markdown.html) activates MathJax and then you can turn 
 
-pd.DataFrame()
+```latex
+\int_0^\infty \exp(-x) {\rm d} x = 1 
 ```
+
+into 
+
+$$ \int_0^\infty \exp(-x) {\rm d} x = 1 $$ 
