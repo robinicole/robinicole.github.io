@@ -2,3 +2,5 @@
 main:
   - title: "Reading list"
     url: /reading_list/
+  - title: "CV"
+    url: /assets/cv.pdf
