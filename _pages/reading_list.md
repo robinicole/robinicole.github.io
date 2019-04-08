@@ -1,6 +1,6 @@
 ---
 title:  "Reading list"
-layout: archive
+layout: single
 permalink: /reading_list/
 author_profile: true
 comments: true
