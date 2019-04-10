@@ -1,6 +1,5 @@
 ---
 title: Automatically reload your modules in a Python notebook
-author: Robin Nicole
 layout: single
 ---
 
