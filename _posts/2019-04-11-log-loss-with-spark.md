@@ -1,8 +1,8 @@
 ---
 title: Log loss of Logistic regression with SparkMLlib 
-
 layout: single
-
+header: 
+   image: /assets/images/header.jpg
 author_profile: true
 --- 
 

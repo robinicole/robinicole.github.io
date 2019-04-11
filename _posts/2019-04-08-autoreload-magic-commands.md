@@ -1,6 +1,8 @@
 ---
 title: Automatically reload your modules in a Python notebook
 layout: single
+header: 
+  image: /assets/images/header.jpg
 ---
 
 One thing which can be really anoying in a Jupyter notebook is that *the changes you made in a module are not effective until you restart your notebook*. 

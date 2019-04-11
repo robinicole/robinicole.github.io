@@ -1,6 +1,8 @@
 ---
 title: Machine learning with Spark MLlib
 layout: single
+header: 
+   image: /assets/images/header.jpg
 
 author_profile: true
 --- 
