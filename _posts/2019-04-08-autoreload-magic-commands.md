@@ -44,6 +44,6 @@ print_greeting()
 
 ## Sources 
 
-[1]  https://support.enthought.com/hc/en-us/articles/204469240-Jupyter-IPython-After-editing-a-module-changes-are-not-effective-without-kernel-restart
+[1] [A blog article](https://support.enthought.com/hc/en-us/articles/204469240-Jupyter-IPython-After-editing-a-module-changes-are-not-effective-without-kernel-restart)
 
-[2]https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html
+[2] [The ipython documentation](https://ipython.readthedocs.io/en/stable/config/extensions/autoreload.html) 
