@@ -1,5 +1,5 @@
 ---
-title: One hot encoding for categories encoded with strings with SparlMLlib
+title: Machine learning with Spark MLlib
 layout: single
 
 author_profile: true
@@ -7,13 +7,15 @@ author_profile: true
 
 ## The Spark machine learning library
 
-I recently discovered the machine learning library shipped with spark and was really love it. In the same manner as scikit learn, you can chain transformers with Pipeline and end up with your preprocessing as well as your model prediction wrapped in the same object. A special mention to the [SQLTransformer](https://spark.apache.org/docs/latest/ml-features.html#sqltransformer) which was a game changer in my workflow.  
+SarkMLlib is the distributed machine learning library shipped with Spark and it really stands out by its *simplicity* and the large number of prediction algorithms it implements there (Logistic regression,  Randome Forests to name a few). If you are an intensive user of scikit-learn you will feel at home when using the different transformers and predictive together with pipelines  *which will  allow to iterate quickly between models* . 
 
-## An example of encoders chaining with pipelines
+One special mention to the  [SQLTransformer](https://spark.apache.org/docs/latest/ml-features.html#sqltransformer) which allows to create a custom transformer with SQL queries and makes your code so much clearer than having to creat  *soo* many temporary view when you want to process dataframes.  
 
-I just wanted to share this "trick" I came accross in the [Spark's MLlib documentation](https://spark.apache.org/docs/2.1.0/ml-classification-regression.html) to do one hot encoding with **categories encoded by string**. The trick is to **first index strings with numbers** with `StringIndexer`  and then perform the one hot encoding. 
+If you are not yet persuaded to adopt it here is an example of how simple it is to use it which should stimulate your curiosity. 
 
-Below is a snippet of a one hot encoder for categories encoded by strings using  `StringIndexer` and  `OneHotEncoder`   chained with a pipeline
+## Chaining two transformers 
+
+Here is a useful  "trick"  you can find in the [Spark's MLlib documentation](https://spark.apache.org/docs/2.1.0/ml-classification-regression.html) to do one hot encoding with **categories encoded by string**. Spark Machine learning doesn't have a transformer to do that but it has one `StringIndexer` to encode strings by integers and another one `OneHotEncoder` to do one hot encoding on integers. So using a `Pipeline` one can get the one hot encoder for strings with 5 lines of code: 
 
 ```python
 from pyspark.ml import Pipeline
