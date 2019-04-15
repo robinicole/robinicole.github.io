@@ -3,4 +3,4 @@ main:
   - title: "Reading list"
     url: /reading_list/
   - title: "CV"
-    url: /assets/cv.pdf
+    url: https://github.com/robinicole/cv/raw/master/cv_data_scientist.pdf
