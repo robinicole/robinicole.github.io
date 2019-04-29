@@ -1,0 +1,8 @@
+---
+layout: single
+title: Interesting article on training Neural networks 
+header: 
+   image: /assets/images/header.jpg
+
+---
+[Here](https://karpathy.github.io/2019/04/25/recipe/) is the link to a new article by Andrej Karpathy the methodology to use when training neural networks. The article is very clear and quickly summarises all the steps to go through when building statistical models, more specifically neural networks. Most of the problems you might encounter when training neural networks are described here (e.g. lack of understanding of the data...) and most importantly the order in which they should be tacked. The article also emphacise that to eficiently train a neural network, you cannot see it as a black box and really need to understand the mathematics behind it such as backpropagation for example (see [here](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)). Really hope this short blog post give you the envy to read this article if did not do it already.
