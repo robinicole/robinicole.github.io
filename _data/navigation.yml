@@ -3,4 +3,6 @@ main:
   - title: "Reading list"
     url: /reading_list/
   - title: "CV"
-    url: https://github.com/robinicole/cv/raw/master/cv_data_scientist.pdf
+    url: https://github.com/robinicole/cv/raw/master/cv_data_scientist.pdf 
+  - title: "Wishlist management system (web project)" 
+    url: http://my-christmas-app.herokuapp.com/
