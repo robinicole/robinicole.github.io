@@ -2,7 +2,9 @@
 main:
   - title: "Reading list"
     url: /reading_list/
+  - title: "Cheatsheets"
+    url: /cheatsheets/
   - title: "CV"
     url: https://github.com/robinicole/cv/raw/master/cv_data_scientist.pdf 
-  - title: "Wishlist management system (web project)" 
+  - title: "Wishlist management system" 
     url: http://my-christmas-app.herokuapp.com/
