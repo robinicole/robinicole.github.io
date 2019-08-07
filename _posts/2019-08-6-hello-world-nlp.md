@@ -1,6 +1,7 @@
 ---
 title: 'Sentiment analysis: a roadtrip through the "Hello World" of NLP'
 layout: single
+toc: true
 header: 
    image: /assets/images/header.jpg 
 ---
