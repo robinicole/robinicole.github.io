@@ -7,4 +7,4 @@ main:
   - title: "CV"
     url: https://github.com/robinicole/cv/raw/master/cv_data_scientist.pdf 
   - title: "Wishlist management system" 
-    url: http://my-christmas-app.herokuapp.com/
+    url: /wishlist_app/
