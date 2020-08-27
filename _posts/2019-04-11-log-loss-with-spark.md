@@ -6,7 +6,7 @@ header:
 author_profile: true
 --- 
 
-Evaluation is the crucial step in a machine learning project and, if you want it to be successful, it is important to choose an evaluation metric which is consistent with your business objectives. For classification (e.g. logistic regression) problems, you could use the accuracy, the precision or the recall but those metrics only evaluate the goodness of the *final classification choice* (binary) and not the accuracy of the *probability* predicted by the algorithm (continuous value between 0 and 1). To evaluate the goodness of the probability  predicted by the Logistic regression, you could use the *ROC-AUC score* or the *log-loss* . Unfortunately there is no implementation of the log-loss shipped with the spark ML library. The snippet of code below does this job: it takes a model prediction dataframe (returned by `model.transform` ) as an input and returns the corresponding log loss. 
+A snippet of code to evaluate the `log-loss` with the pyspark-ML library;
 
 ```python
 from pyspark.sql.functions import udf
