@@ -6,7 +6,7 @@ author_profile: true
 toc: true
 comments: true
 ---
-> Read in case of emergency or if you are tired browsing Stackoverflow. 
+> A collection of code snippets
  
 # Python
 
