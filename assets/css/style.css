@@ -1460,3 +1460,19 @@ footer .credits {
 footer .credits a {
   color: #fff;
 }
+
+.floating-cta {
+  position: fixed;  /* This makes the CTA float */
+  bottom: 20px;     /* Distance from the bottom of the window */
+  left: 20px;      /* Distance from the right of the window */
+  padding: 10px 20px; /* Button padding */
+  background-color: #FF5733; /* Button background color */
+  color: #ffffff;   /* Button text color */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove the underline from the link */
+  transition: background-color 0.3s; /* Smooth color change on hover */
+}
+
+.floating-cta:hover {
+  background-color: #FF2E00; /* Slightly darker color on hover */
+}
