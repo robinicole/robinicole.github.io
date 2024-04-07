@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:57102/archives/</loc>
+  </url><url>
+    <loc>http://localhost:57102/categories/</loc>
+  </url><url>
+    <loc>http://localhost:57102/1/01/how-i-installed-this-blog/</loc>
+  </url><url>
+    <loc>http://localhost:57102/posts/</loc>
+  </url><url>
+    <loc>http://localhost:57102/</loc>
+  </url><url>
+    <loc>http://localhost:57102/tags/</loc>
+  </url>
+</urlset>
