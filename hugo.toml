@@ -8,6 +8,8 @@ contentDir = "content"
 defaultContentLanguage = "en-us"
 title = "Robin's Tech Blog"
 theme = "hugo-tranquilpeak-theme"
+# theme = "black-and-light"
+
 disqusShortname = "hugo-tranquilpeak-theme"
 paginate = 7
 canonifyurls = true
@@ -35,7 +37,7 @@ canonifyurls = true
 # ------
 [author]
   name = "Robin Nicole"
-  bio = "An applied scientist interested in machine learning and LLMs"
+  bio = "Applied scientist interested in machine learning, LLMs and statistical physics inspired machine learning"
   job = "Applied Scientist"
   location = "France"
   picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
@@ -224,4 +226,9 @@ canonifyurls = true
     class = ""
     icon = ""
     url = "/#about"
+
+[[params.sharingOptions]]
+    name = "Linkedin"
+    icon = "fab fa-linkedin"
+    url = "https://www.linkedin.com/sharing/share-offsite/?url=%s"
 
