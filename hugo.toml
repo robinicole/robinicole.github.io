@@ -83,6 +83,13 @@ canonifyurls = true
   pre = "<i class=\"sidebar-button-icon fab fa-lg fa-github\" aria-hidden=\"true\"></i>"
   url = "https://github.com/robinicole"
 
+[[menu.links]]
+  weight = 1
+  identifier = "linkedin"
+  name = "Linkedin"
+  pre = "<i class=\"sidebar-button-icon fab fa-lg fa-linkedin\" aria-hidden=\"true\"></i>"
+  url = "https://www.linkedin.com/in/robin-nicole-phd-54929349/"
+
 [[menu.misc]]
   weight = 1
   identifier = "rss"

@@ -13,7 +13,7 @@ showPagination: true
 showSocial: true
 showDate: true
 summary: "A step-by-step guide on setting up a blog using Hugo and the Tranquilpeak theme, with tips on customization and theme management."
-title: "Creating a Blog with Hugo and Tranquilpeak Theme"
+title: "How to create a Blog (like this website) with Hugo and Tranquilpeak Theme ?"
 lastmod: 2024-04-06
 ---
 When it comes to creating a blog, popular platforms like WordPress and Wix offer user-friendly interfaces and a wide range of features. However, as a developper I prioritize simplicity, performance, and flexibility.  The combination of Hugo and GitHub presents ticked all those boxes. Hugo, is a static site generator which allows to create blogs by generating static HTML files from your content, eliminating the need for server-side processing and database queries.
@@ -24,8 +24,8 @@ In this first, we'll walk through the process of creating this blog using the Hu
 
 ## Step 1: Install Hugo and Create a New Site
 
-This first step is to have a functioning blog with a basix theme. To do so I followed the [official Hugo quick start instructions](https://gohugo.io/getting-started/quick-start/) to install Hugo and create a new site. Once you have completed the initial setup, serve your site locally using the following command:
-
+This first step is to have a functioning blog with a basix theme. To do so I followed the [official Hugo quick start instructions](https://gohugo.io/getting-started/quick-start/). I guides you through the process of installing the hugo framework as well as creating a first website with Hugo and adding a custom them.
+Once you have completed this initial setup, you can serve your site locally using the following command:
 ```bash
 hugo server --disableFastRender
 ```
