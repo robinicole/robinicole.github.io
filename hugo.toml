@@ -9,7 +9,6 @@ defaultContentLanguage = "en-us"
 title = "Robin's Tech Blog"
 theme = "hugo-tranquilpeak-theme"
 # theme = "black-and-light"
-
 disqusShortname = "hugo-tranquilpeak-theme"
 paginate = 7
 canonifyurls = true
@@ -21,7 +20,7 @@ canonifyurls = true
   tag = "tags"
   category = "categories"
   archive = "archives"
-
+tableOfContents = true
 # ------
 # Markup
 # ------
@@ -37,7 +36,7 @@ canonifyurls = true
 # ------
 [author]
   name = "Robin Nicole"
-  bio = "Applied scientist interested in machine learning, LLMs and statistical physics inspired machine learning"
+  bio = "Applied scientist into LLMs and statistical physics inspired machine learning"
   job = "Applied Scientist"
   location = "France"
   picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
