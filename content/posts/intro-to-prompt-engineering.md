@@ -21,6 +21,9 @@ Please have a look at [this prompt generator](https://prompt-engineering.streaml
 
 Courtesy of Robin, the author of this article ;)
 {{< /alert >}}
+{{< alert success >}}
+You can find a more detailed version of this article aimed at more ai-experienced audience [here]({{< ref "llm_prompting.md" >}})
+{{< /alert >}}
 {{< toc >}}
 # What is Prompt Engineering?
 Prompt engineering is the process of designing the right prompts (instructions) to get the desired output from AI language models like ChatGPT.

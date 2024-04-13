@@ -20,6 +20,9 @@ Please have a look at [this prompt generator](https://prompt-engineering.streaml
 
 Courtesy of Robin, the author of this article ;)
 {{< /alert >}}
+{{< alert success >}}
+You can find a simpler version of this article aimed at a more beginner audience [here]({{< ref "intro-to-prompt-engineering.md" >}})
+{{< /alert >}}
 {{< toc >}}
 # Introduction
 
