@@ -20,7 +20,7 @@ toc: true
 By the end of this post, you'll know how to create effective prompts for ChatGPT and other AI language models, even if you're new to the topic!
 {{< /alert >}}
 {{< alert success >}}
-Please have a look at [this prompt generator](https://prompt-engineering.streamlit.app/), which generate prompts according to the principles outlined in the article.
+Please have a look at [this prompt generator](https://robin-nicole.streamlit.app/), which generate prompts according to the principles outlined in the article.
 
 Courtesy of Robin, the author of this article ;)
 {{< /alert >}}

@@ -23,7 +23,7 @@ comments: true
 - [The Alchemyst](/the_alchemyst.html)
 - [The Little Prince](/the_little_prince.html)
 
-An image of the graph created for the little prince
+An image of the knowledge graph created for the little prince
 
 ![An image of a graph](/little_prince.png)
 
