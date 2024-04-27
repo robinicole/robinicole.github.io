@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 800px;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 1, "label": "Santiago", "shape": "box", "title": "The protagonist, a young Andalusian shepherd who dreams of finding a worldly treasure in Egypt.\n"}, {"color": "#97c2fc", "id": 2, "label": "Personal Legend", "shape": "box", "title": "The concept of fulfilling one\u0027s destiny and achieving lifelong goals.\n"}, {"color": "#97c2fc", "id": 3, "label": "The Alchemist", "shape": "box", "title": "A wise, mysterious figure who guides Santiago in achieving his Personal Legend.\n"}, {"color": "#97c2fc", "id": 4, "label": "Alchemy", "shape": "box", "title": "The medieval practice and spiritual philosophy aimed at transforming the mundane into the spectacular, symbolizing personal transformation.\n"}, {"color": "#97c2fc", "id": 5, "label": "The Englishman", "shape": "box", "title": "A fellow seeker of alchemical knowledge Santiago meets on his journey.\n"}, {"color": "#97c2fc", "id": 6, "label": "Love", "shape": "box", "title": "Represented by Santiago\u0027s love interest, Fatima, whom he meets at the oasis.\n"}, {"color": "#97c2fc", "id": 7, "label": "Oasis", "shape": "box", "title": "A safe haven in the desert providing crucial respite on Santiago\u0027s journey.\n"}, {"color": "#97c2fc", "id": 8, "label": "Desert", "shape": "box", "title": "Symbolizes the obstacles and hardships Santiago faces, as well as a place of philosophical insight.\n"}, {"color": "#97c2fc", "id": 9, "label": "Dreams", "shape": "box", "title": "The innate desires that motivate one to pursue their Personal Legend.\n"}, {"color": "#97c2fc", "id": 10, "label": "Treasure", "shape": "box", "title": "The ultimate goal of Santiago\u0027s journey, both a physical and symbolic reward.\n"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": 1, "label": "pursues", "title": "Santiago relentlessly pursues his Personal Legend.\n", "to": 2}, {"arrows": "to", "from": 1, "label": "influenced by", "title": "Santiago is deeply influenced and guided by the Alchemist.\n", "to": 3}, {"arrows": "to", "from": 1, "label": "practices", "title": "Santiago learns and practices alchemy through his journey.\n", "to": 4}, {"arrows": "to", "from": 1, "label": "meets", "title": "Santiago meets and learns from the Englishman about alchemy.\n", "to": 5}, {"arrows": "to", "from": 1, "label": "falls in love", "title": "Santiago falls in love with Fatima at the oasis.\n", "to": 6}, {"arrows": "to", "from": 1, "label": "arrives at", "title": "Santiago arrives at the oasis, a pivotal point in his journey.\n", "to": 7}, {"arrows": "to", "from": 1, "label": "traverses", "title": "Santiago traverses the desert, facing many challenges.\n", "to": 8}, {"arrows": "to", "from": 1, "label": "inspired by", "title": "Santiago is inspired by his own dreams to find the treasure.\n", "to": 9}, {"arrows": "to", "from": 1, "label": "seeks", "title": "Santiago seeks the treasure, the culmination of his quest.\n", "to": 10}, {"arrows": "to", "from": 3, "label": "guides", "title": "The Alchemist guides Santiago in his journey towards the treasure.\n", "to": 1}, {"arrows": "to", "from": 5, "label": "studies", "title": "The Englishman studies and seeks to master alchemy.\n", "to": 4}, {"arrows": "to", "from": 6, "label": "symbol of", "title": "Love is seen as a crucial part of Santiago\u0027s Personal Legend.\n", "to": 2}, {"arrows": "to", "from": 7, "label": "represents", "title": "The oasis represents a pause on the path to one\u0027s destiny.\n", "to": 2}, {"arrows": "to", "from": 8, "label": "challenges from", "title": "The desert presents challenges that test one\u0027s dedication to their Personal Legend.\n", "to": 2}, {"arrows": "to", "from": 9, "label": "motivated by", "title": "Dreams motivate Santiago to continue his journey.\n", "to": 1}, {"arrows": "to", "from": 10, "label": "contains", "title": "The treasure contains secrets of alchemy.\n", "to": 4}, {"arrows": "to", "from": 2, "label": "leads to", "title": "Following one\u0027s Personal Legend leads to the discovery of treasure.\n", "to": 10}, {"arrows": "to", "from": 8, "label": "challenges in", "title": "The challenges in the desert prompt deep self-reflection and growth.\n", "to": 9}, {"arrows": "to", "from": 4, "label": "manifests in", "title": "Alchemy manifests in Santiago\u0027s transformation throughout his journey.\n", "to": 1}, {"arrows": "to", "from": 10, "label": "embodies", "title": "The treasure embodies the culmination of Santiago\u0027s dreams and efforts.\n", "to": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 100,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -1000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

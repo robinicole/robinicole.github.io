@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 800px;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": 1, "label": "French Revolution", "shape": "box", "title": "A period of social and political upheaval in France that provides the backdrop for the story."}, {"color": "#97c2fc", "id": 2, "label": "London and Paris", "shape": "box", "title": "The two primary settings of the novel, representing contrasting environments and attitudes."}, {"color": "#97c2fc", "id": 3, "label": "Charles Darnay", "shape": "box", "title": "A French aristocrat who rejects his heritage for a moral life in England."}, {"color": "#97c2fc", "id": 4, "label": "Sydney Carton", "shape": "box", "title": "A disillusioned English lawyer who finds redemption through sacrifice."}, {"color": "#97c2fc", "id": 5, "label": "Lucie Manette", "shape": "box", "title": "The loving and compassionate heroine, who symbolizes hope and goodness."}, {"color": "#97c2fc", "id": 6, "label": "Dr. Alexandre Manette", "shape": "box", "title": "A former prisoner of the Bastille, embodying the trauma and revenge of past injustices."}, {"color": "#97c2fc", "id": 7, "label": "Madame Defarge", "shape": "box", "title": "A vindictive revolutionary, driven by personal vendetta to seek revenge against the aristocracy."}, {"color": "#97c2fc", "id": 8, "label": "Themes of Resurrection", "shape": "box", "title": "Explores the possibilities of resurrection and transformation, both personal and societal."}, {"color": "#97c2fc", "id": 9, "label": "Sacrifice", "shape": "box", "title": "Central to the novel\u0027s plot, highlighting themes of self-sacrifice for the greater good."}, {"color": "#97c2fc", "id": 10, "label": "Justice vs. Revenge", "shape": "box", "title": "The novel questions the lines between justice and revenge through its characters\u0027 actions."}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": 2, "label": "Setting Contrast", "title": "Contrasts between the chaos of Paris and the relative peace of London during the revolution.", "to": 1}, {"arrows": "to", "from": 3, "label": "Personal Rejection", "title": "Charles Darnay\u0027s personal rejection of his aristocratic heritage symbolized by the French Revolution\u0027s excesses.", "to": 1}, {"arrows": "to", "from": 3, "label": "Love Interest", "title": "Charles Darnay and Lucie Manette\u0027s romantic relationship central to the novel.", "to": 5}, {"arrows": "to", "from": 4, "label": "Redemptive Transformation", "title": "Sydney Carton\u0027s personal transformation linked to the broader theme of resurrection.", "to": 8}, {"arrows": "to", "from": 4, "label": "Ultimate Sacrifice", "title": "Sydney Carton\u0027s sacrifice represents a poignant element of the resurrection theme.", "to": 9}, {"arrows": "to", "from": 5, "label": "Father-Daughter Bond", "title": "Lucie and Dr. Manette\u0027s relationship highlights themes of familial loyalty and the psychological scars of imprisonment.", "to": 6}, {"arrows": "to", "from": 6, "label": "Victim of Revolution", "title": "Dr. Manette\u0027s history with Madame Defarge, who seeks vengeance for the injustices he suffered.", "to": 7}, {"arrows": "to", "from": 7, "label": "Embodiment of Revenge", "title": "Madame Defarge\u0027s actions exemplify the extreme consequences of unchecked revenge.", "to": 10}, {"arrows": "to", "from": 5, "label": "Interpersonal Connections", "title": "Lucie Manette\u0027s influence helps to spark Sydney Carton\u0027s transformation.", "to": 4}, {"arrows": "to", "from": 7, "label": "Familial Revenge", "title": "Madame Defarge\u0027s vendetta against Dr. Manette and his descendants.", "to": 6}, {"arrows": "to", "from": 2, "label": "Social Contrast", "title": "The difference in attitudes and lives between the French and English societies, represented by Darnay\u0027s move.", "to": 3}, {"arrows": "to", "from": 5, "label": "Symbol of Hope", "title": "Lucie as a symbol of hope and the potential for personal and societal renewal.", "to": 8}, {"arrows": "to", "from": 3, "label": "Moral Sacrifice", "title": "Charles Darnay\u0027s sacrifices for his beliefs and love, paralleling Sydney Carton\u0027s actions.", "to": 9}, {"arrows": "to", "from": 6, "label": "Influence of the Past", "title": "Dr. Manette\u0027s past experiences influencing the theme of resurrection.", "to": 8}, {"arrows": "to", "from": 1, "label": "Cross-Setting Influence", "title": "Influence of the revolutionary ideals and turmoil across both London and Paris.", "to": 2}, {"arrows": "to", "from": 10, "label": "Societal vs. Personal Justice", "title": "Debate on the justice brought by the revolution versus personal vendettas.", "to": 1}, {"arrows": "to", "from": 9, "label": "Transformation through Love", "title": "Sacrificial acts within the novel often spurred by deep love, as seen in the relationships involving Lucie.", "to": 5}, {"arrows": "to", "from": 1, "label": "Historical Impact", "title": "The historical context of the French Revolution shaping the transformative themes of the story.", "to": 8}, {"arrows": "to", "from": 9, "label": "Impact of Sacrifice", "title": "The sacrifices characters make impact their personal transformations and perceptions of resurrection.", "to": 8}, {"arrows": "to", "from": 6, "label": "Psychological Effects", "title": "The psychological scars borne by characters like Dr. Manette influencing their views on justice and revenge.", "to": 10}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "barnesHut": {
+            "avoidOverlap": 100,
+            "centralGravity": 0.3,
+            "damping": 0.09,
+            "gravitationalConstant": -1000,
+            "springConstant": 0.001,
+            "springLength": 250
+        },
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
