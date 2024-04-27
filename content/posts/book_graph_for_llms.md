@@ -23,6 +23,10 @@ comments: true
 - [The Alchemyst](/the_alchemyst.html)
 - [The Little Prince](/the_little_prince.html)
 
+An image of the graph created for the little prince
+
+![An image of a graph](/little_prince.png)
+
 # Introduction
 Large language models like ChatGPT have the remarkable ability to extract information from documents and present it in a concise and easy to undertand format. However, the standard ChatGPT output of chatGPT is limited to text and images. In this article, we will explore how to leverage ChatGPT's capabilities and constrain its output to create visually appealing knowledge graphs that summarize books similar to this [this graph that symmarizes the famous "A tale of two cities"](/a_tale_of_two_cities.html)
 
