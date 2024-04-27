@@ -15,6 +15,7 @@ showDate: true
 summary: "A step-by-step guide on setting up a blog using Hugo and the TranquilPeak theme, with tips on customization and theme management."
 title: "How to create a Blog (like this website) with Hugo and TranquilPeak Theme ?"
 lastmod: 2024-04-06
+
 ---
 When it comes to creating a blog, popular platforms like WordPress and Wix offer user-friendly interfaces and a wide range of features. However, as a developer I prioritize simplicity, performance, and flexibility.  The combination of Hugo and GitHub presents ticked all those boxes. Hugo, is a static site generator which allows to create blogs by generating static HTML files from your content, eliminating the need for server-side processing and database queries.
 

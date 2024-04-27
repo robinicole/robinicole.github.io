@@ -11,7 +11,8 @@ summary: "A quick and simple introduction prompt engineering or how to take adva
 title: "Introduction to prompt engineering (Beginner)"
 lastmod: 2024-04-13
 toc: true
-thumbnailImage: "prompting_cover.webp"
+# thumbnailImage: "prompting_cover.webp"
+# coverImage: "prompting_cover.webp"
 
 ---
 
