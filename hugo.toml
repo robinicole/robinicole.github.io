@@ -9,7 +9,7 @@ defaultContentLanguage = "en-us"
 title = "Robin's Tech Blog"
 theme = "hugo-tranquilpeak-theme"
 # theme = "black-and-light"
-disqusShortname = "hugo-tranquilpeak-theme"
+disqusShortname = "machine-learning-for-humans"
 paginate = 7
 canonifyurls = true
 
@@ -126,7 +126,8 @@ tableOfContents = true
   # Customize link of author avatar in sidebar
   #  [params.sidebar.profile]
   #    url = "/#about"
-
+[params.comment.disqus]
+  enable = true
   # -------------------
   # Media configuration
   # -------------------

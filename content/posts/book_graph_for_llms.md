@@ -13,6 +13,7 @@ lastmod: 2024-04-25
 toc: true
 thumbnailImage: "book_graph.png"
 coverImage: "book_graph_darker.png"
+comments: true
 ---
 {{< toc >}}
 
