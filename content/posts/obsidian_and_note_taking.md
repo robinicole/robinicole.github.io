@@ -35,7 +35,7 @@ To learn more about the method, I found the book of Sönke Ahrens, “How to Tak
 The way I recommend reading this book is start by watching one of video in this youtube playlist [^3] to get you started and then dive into the book itself to build your own system tailored to your needs.  
 
 Linear chain of thought 
-{{< mermaid >}}
+```mermaid
 graph LR
     A["202505050: Starting Point - Zettelkasten Method"] --> B["202505051: Atomic Notes Principle"]
     B --> C["202505052: Creating Effective Note Titles"]
@@ -45,11 +45,11 @@ graph LR
     F --> G["202505056: Emergent Structures in Notes"]
     G --> H["202505057: Knowledge Synthesis"]
     H --> I["202505058: Publishing From Your Zettelkasten"]
-{{< /mermaid >}}
+```
 
 Non linear chain of thought (better)
 
-{{< mermaid >}}
+```mermaid
 graph TD
     A["202505060: Core Concepts"] --- B["202505061: Atomic Notes"]
     A --- C["202505062: Linking Strategy"]
@@ -89,7 +89,7 @@ graph TD
     T --- W
     U --- W
     V --- W
-{{< /mermaid >}}
+```
 ### Digital Zettelkasten
 At the beginning Niklas Luhmann implemented the zettelkasten using slip note which he cross-referenced. Today however, digital offer a more convenient to store, access and browse your notes. The two software I tried to do that are Notion and Obsidian. For note taking in particular I chose Obsidian over notion for the following reason all your notes are stored in markdown i.e. in plain text, if you decide to store your notes on the obsidian server they are end-to-end encoded which means nobody except you can access them (not event he obsidien team), the linking process between notes is easier than with Notion.
 To start building your your digital knowledge graph, I suggest yo watch the some youtube video [^3] to get you started and complement this with the taking smart notes book mentioned in the section [[#The theory back to basics]]. 
