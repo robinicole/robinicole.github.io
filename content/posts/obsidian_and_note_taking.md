@@ -11,7 +11,7 @@ summary: "create visually appealing and informative book knowledge graphs using 
 title: "Some random thought about notetaking"
 lastmod: 2024-05-25
 toc: true
-draft: true
+draft: false
 # coverImage: "book_graph_darker.png"
 comments: true
 ---
