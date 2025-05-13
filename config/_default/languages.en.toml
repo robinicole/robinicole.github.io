@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Blowfish"
+title = "Thought garden"
 
 [params]
   displayName = "EN"
@@ -11,11 +11,11 @@ title = "Blowfish"
   dateFormat = "2 January 2006"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
-  # description = "My awesome website"
+  description = "My awesome website"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
-  name = "Robin Nicole"
+  name = "Robin (like \"Robin Hood\")"
   image = "img/blowfish_logo.png"
   imageQuality = 96
   headline = "The tallest data scientist in the room"
