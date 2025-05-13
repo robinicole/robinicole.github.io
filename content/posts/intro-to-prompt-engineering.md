@@ -7,6 +7,7 @@ showTags: true
 showPagination: true
 showSocial: true
 showDate: true
+draft: true
 summary: "A quick and simple introduction prompt engineering or how to take advantage of chatbots such as ChatGPT"
 title: "Introduction to prompt engineering (Beginner)"
 lastmod: 2024-04-13

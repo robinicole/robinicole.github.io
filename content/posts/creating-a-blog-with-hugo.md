@@ -12,6 +12,7 @@ showTags: true
 showPagination: true
 showSocial: true
 showDate: true
+draft: true
 summary: "A step-by-step guide on setting up a blog using Hugo and the TranquilPeak theme, with tips on customization and theme management."
 title: "How to create a Blog (like this website) with Hugo and TranquilPeak Theme ?"
 lastmod: 2024-04-06
