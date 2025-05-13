@@ -16,18 +16,11 @@ toc: true
 
 ---
 
-{{< alert success >}}
 By the end of this post, you'll know how to create effective prompts for ChatGPT and other AI language models, even if you're new to the topic!
-{{< /alert >}}
-{{< alert success >}}
 Please have a look at [this prompt generator](https://robin-nicole.streamlit.app/), which generate prompts according to the principles outlined in the article.
 
 Courtesy of Robin, the author of this article ;)
-{{< /alert >}}
-{{< alert success >}}
 You can find a more detailed version of this article aimed at more ai-experienced audience [here]({{< ref "llm_prompting.md" >}})
-{{< /alert >}}
-{{< toc >}}
 # What is Prompt Engineering?
 Prompt engineering is the process of designing the right prompts (instructions) to get the desired output from AI language models like ChatGPT.
 

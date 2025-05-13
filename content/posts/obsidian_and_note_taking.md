@@ -15,7 +15,6 @@ draft: false
 # coverImage: "book_graph_darker.png"
 comments: true
 ---
-{{< toc >}}
 In this article I want to discuss my approach to note taking and the recent trend of Seconds brain and digital garden. Because the second brain is somehow fashionable at the moment, there has been a lot of hype about it on youtube and this article tries to separate the base from the hype. 
 ## Digital gardens
 Recently, I have been interested in the concept of a "digital garden"[^1] [^2] which is essentially a personal knowledge collection similar to a Wikipedia, but with key differences. A digital garden is a personal online space where individuals collect and connect their thoughts, ideas, and knowledge. Unlike Wikipedia, which aims to present information objectively for a general audience, a digital garden intentionally reflects the way its creator thinks and learns. The main advantage of a digital garden over traditional encyclopedias is that both the content and the connections between topics represent the author's personal thought patterns and learning journey. There's no attempt to standardize the presentation or organization to suit a general audience.
@@ -98,11 +97,8 @@ To start building your your digital knowledge graph, I suggest yo watch the some
 I hope you enjoyed as much as me how the perspective of being able to build a bag of notes which are organised in a way that make sense to you which is the beauty of Zettelkasten and co. method and make them a too of choice for research and creativity. This way of storing and evaluating knowledge seems important especially in the era of LLM which are expert in interpolating idea together where I see the body of knowledge increasing faster than ever.  
 
 ## References 
-### Digital garden 
 [^1]: A collection of digital garden https://github.com/lyz-code/best-of-digital-gardens
 [^2]: An example of a digital garden https://lyz-code.github.io/blue-book/digital_garden/  
-### Second brain community 
-
 [^3]: The result of a youtube research on Obsidian and Zettelkasten https://www.youtube.com/results?search_query=zettelkasten+and+obsidian
 
 [^4]: Second brain on youtube https://www.youtube.com/results?search_query=second+brain 

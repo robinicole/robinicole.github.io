@@ -15,7 +15,6 @@ thumbnailImage: "book_graph.png"
 coverImage: "book_graph_darker.png"
 comments: true
 ---
-{{< toc >}}
 
 # The graphs created withing this project 
 - [A Tale of Two Cities](/a_tale_of_two_cities.html)

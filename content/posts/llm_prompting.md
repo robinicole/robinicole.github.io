@@ -15,18 +15,11 @@ lastmod: 2024-04-09
 # coverImage: "prompting_cover.webp"
 toc: true
 ---
-{{< alert success >}}
 By the end of this post, you'll have the skills to create effective, tailored prompts for ChatGPT and other AI language models. 
-{{< /alert >}}
-{{< alert success >}}
 Please have a look at [this prompt generator](https://robin-nicole.streamlit.app/), which generate prompts according to the principles outlined in the article.
 
 Courtesy of Robin, the author of this article ;)
-{{< /alert >}}
-{{< alert success >}}
 You can find a simpler version of this article aimed at a more beginner audience [here]({{< ref "intro-to-prompt-engineering.md" >}})
-{{< /alert >}}
-{{< toc >}}
 # Introduction
 
 When talking to new ChatGPT users, a common complaint is that the AI's responses don't quite match the desired tone or style for their specific use case.
@@ -39,9 +32,7 @@ However, this versatility can also be a drawback, as chatGPT tends to provide br
 I will then discuss how you can use templates not to have to rewrite the same large prompt again and again. Now let's start and dive head first to discover few prompting methods:
 
 
-{{< alert info >}}
 Throughout this post, the term "LLM" (large language model) will be used to refer to AI chat models like ChatGPT and Claude.
-{{< /alert >}}
 # Prompting best practices
 
 In this paragraph I describe 3 prompting method to make your prompt top-notch. Note that while those methods are described in isolation, you get the best out of them by combining them together. For example Use the CO-STAR method to describe the context of your prompt, provide few example of outputs you desire and ask the LLM to "think step by step" and you will have a solid prompt.
@@ -55,9 +46,7 @@ This approach is particularly useful for those looking to automate tasks they pr
 
 For instance, if you're a content writer aiming to create a prompt that automatically generates articles in your writing style, you can provide the LLM with a few articles you've written before. Then, ask the AI to generate new content that mimics the tone, structure, and style of your example pieces. This technique, known as few-shot prompting, helps the LLM understand and replicate your writing voice.
 
-{{< alert info >}}
 Few shot prompting works especially well because LLMs are really generic models meaning that they are going to perform ok at a wide range of tasks. By doing few shot prompting you are providing the model some extra training to perform well at the specific task you want it to perform for you.
-{{< /alert >}}
 
 If we want to make a prompt that will be useful to a content writer we could write something like: 
 ```xml
