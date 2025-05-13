@@ -1,18 +1,10 @@
 ---
-keywords:
- - LLM
- - prompt engineering 
-metaAlignment: center
-showTags: true
-showPagination: true
-showSocial: true
 showDate: true
-summary: "create visually appealing and informative book knowledge graphs using the power of Large Language Models"
-title: "Some random thought about notetaking"
-lastmod: 2024-05-25
+summary: "Discovering 50 shades of note-taking"
+title: "About note-taking"
+date: 2024-05-25
 toc: true
 draft: false
-# coverImage: "book_graph_darker.png"
 comments: true
 ---
 In this article I want to discuss my approach to note taking and the recent trend of Seconds brain and digital garden. Because the second brain is somehow fashionable at the moment, there has been a lot of hype about it on youtube and this article tries to separate the base from the hype. 
