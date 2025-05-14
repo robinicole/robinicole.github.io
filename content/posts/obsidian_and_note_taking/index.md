@@ -2,11 +2,11 @@
 showDate: true
 summary: "Discovering 50 shades of note-taking"
 title: "About note-taking"
-date: 2024-05-25
-toc: true
+date: 2025-05-01
 draft: false
 comments: true
 ---
+
 In this article I want to discuss my approach to note taking and the recent trend of Seconds brain and digital garden. Because the second brain is somehow fashionable at the moment, there has been a lot of hype about it on youtube and this article tries to separate the base from the hype. 
 ## Digital gardens
 Recently, I have been interested in the concept of a "digital garden"[^1] [^2] which is essentially a personal knowledge collection similar to a Wikipedia, but with key differences. A digital garden is a personal online space where individuals collect and connect their thoughts, ideas, and knowledge. Unlike Wikipedia, which aims to present information objectively for a general audience, a digital garden intentionally reflects the way its creator thinks and learns. The main advantage of a digital garden over traditional encyclopedias is that both the content and the connections between topics represent the author's personal thought patterns and learning journey. There's no attempt to standardize the presentation or organization to suit a general audience.
