@@ -6,7 +6,8 @@ date: 2025-07-23
 draft: false
 comments: true
 ---
-# Article summary as a graph
+
+## Article summary as a graph
 {{< mermaid >}}
 graph TD
     A[AI Expansion] --> B[Industrial Revolution]
@@ -33,10 +34,10 @@ graph TD
     class F,G critical
 {{< /mermaid >}}
 
-# Introduction
+## Introduction
 We're living through a technological shift that feels both familiar and unprecedented. While every generation believes it's witnessing history's most important transformation, the AI revolution genuinely appears different—not just in scope, but in what it targets. For the first time, we're automating human thinking itself, not just human labor. This article examines where we are in this transformation, what history teaches us about technological disruption, and what might come next as we navigate uncharted territory.
 
-# Where we are at now ? 
+## Where we are at now ? 
 In the last few years the "grand public" has witnessed a rapid expansion of AI. I think there are two reasons for that: we are building on top of solid foundations, and second, AI development feeds itself.
 
 First, even though AI got the headlines with ChatGPT recently, it relies on several other successful research projects. For example, the internet has made it possible to access and process knowledge at a scale never imagined before, computer hardware gave rise to highly efficient GPUs which are the core of neural networks such as ChatGPT, and the improvement of Python - an easy-to-use language which makes it possible for novice developers to experiment with LLMs.
@@ -45,7 +46,7 @@ Secondly, progress in research (and in the case that interests us, ML research o
 
 In this rapid advancement, us as mere humans are seeing our way of working changed significantly as we get to outsource most of our jobs to those chatbots and start to witness an internet where a lot of the content is auto-generated.
 
-# What happened before ? 
+## What happened before ? 
 To think about the future, I always find it useful to reflect on the past. More specifically, I want to think about the rise of manual labor automation and compare it to the intellectual labor automation that we witness now.
 
 The industrial revolution gives us a blueprint for what might happen. When machines started replacing human muscle power, there was initially a lot of fear and resistance. People were worried about losing their livelihoods, and rightfully so - many traditional crafts and manual jobs simply disappeared.
@@ -56,7 +57,7 @@ Only the strongest survived in each industry. The blacksmiths who adapted became
 
 What's fascinating is how closely this mirrors the industrial revolution pattern. Just as steam engines and machinery amplified human muscle power beyond what anyone thought possible, AI is now amplifying human cognitive power in the same way. The steam engine didn't just replace a few workers - it fundamentally changed what it meant to do physical work. Similarly, AI isn't just replacing a few thinkers - it's changing what it means to do intellectual work. We're seeing the same cycle: initial fear, massive disruption, then adaptation to a new equilibrium where humans and machines work together in ways we couldn't have imagined before. 
 
-# How do we go from there ? 
+## Where do we go from there ? 
 
 In the short term, we're about to see the same demand and supply imbalance that hit manual laborers during the industrial revolution, except this time it's coming for white-collar jobs. The supply of code, legal documents, financial analysis, and accounting work is about to explode while demand stays roughly the same. Software engineers, accountants, and lawyers - the knowledge workers who thought they were safe - are going to face the same brutal economics that factory workers faced 150 years ago.
 
@@ -72,7 +73,7 @@ This brings us to an uncomfortable possibility that we've never faced before: we
 
 This might be when universal basic income stops being a progressive policy idea and becomes an economic necessity. Not because politicians want to be nice, but because the alternative is mass unemployment and social collapse. The challenge will be figuring out how to fund it when most of the value creation is happening through AI systems rather than human labor.
 
-# Conclusion
+## Conclusion
 We're automating human thinking for the first time in history—a fundamentally different challenge than previous technological revolutions. The path forward requires both individual adaptation (developing uniquely human skills that complement AI) and collective action (new social contracts, possibly including Universal Basic Income as economic necessity rather than progressive policy).
 
 The greatest risk isn't AI itself, but allowing its benefits to concentrate among a small elite while displacing millions. The choices we make in the next few years about development, regulation, and wealth distribution will determine whether this transformation creates widespread prosperity or devastating inequality.
