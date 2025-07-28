@@ -10,28 +10,29 @@ comments: true
 ## Article summary as a graph
 {{< mermaid >}}
 graph TD
-    A[AI Expansion] --> B[Industrial Revolution]
-    B --> C[New Jobs Emerged]
+    A[AI Revolution<br/>Automating thinking itself] --> B[Self-Reinforcing Research<br/>AI improves AI research]
+    A --> C[Industrial Revolution Parallel<br/>Manual → Intellectual automation]
     
-    A --> D[AI Revolution]
-    C --> D
+    B --> D[Research Acceleration<br/>Exponential improvements]
+    D --> B
     
-    D --> E[Job Displacement]
-    D --> F[Automating Thinking]
+    C --> E[Premium Human Content<br/>Like artisanal goods]
+    C --> F[Job Displacement<br/>White-collar threat]
     
-    E --> G[Fewer Jobs?]
-    F --> G
+    F --> G[Mass Unemployment Risk<br/>Fewer new jobs created]
+    G --> H[UBI Necessity<br/>Economic requirement]
     
-    %% Styling to create visual narrative arc
-    classDef present fill:#e3f2fd,stroke:#1976d2,stroke-width:3px
-    classDef past fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef future fill:#ffebee,stroke:#d32f2f,stroke-width:3px
-    classDef critical fill:#ffcdd2,stroke:#d32f2f,stroke-width:4px
+    A --> I[AI Elite Formation<br/>Wealth concentration]
+    I --> J[Social Collapse Risk<br/>Inequality crisis]
     
-    class A present
-    class B,C past
-    class D,E future
-    class F,G critical
+    H --> J
+    
+    J --> K[Future Choice Point<br/>Human creation we can influence]
+    K --> L[Collective Action<br/>Regulation & distribution]
+    K --> M[Individual Adaptation<br/>Uniquely human skills]
+    
+    E --> N[Market Bifurcation<br/>Premium vs mass market]
+    N --> E
 {{< /mermaid >}}
 
 ## Introduction
