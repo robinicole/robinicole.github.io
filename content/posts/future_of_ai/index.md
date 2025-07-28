@@ -3,7 +3,7 @@ showDate: true
 summary: "My take on where AI is taking us"
 title: "AI and our future"
 date: 2025-07-23
-draft: false
+draft: true
 comments: true
 ---
 
