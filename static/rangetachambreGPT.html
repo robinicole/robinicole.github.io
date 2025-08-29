@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Ta Chambre GPT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .chat-header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .chat-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            word-wrap: break-word;
+        }
+
+        .message.bot .message-content {
+            background: #e3f2fd;
+            color: #1976d2;
+            border-bottom-left-radius: 6px;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            border-bottom-right-radius: 6px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin: 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .bot .avatar {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            order: -1;
+        }
+
+        .user .avatar {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .chat-input {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #667eea;
+        }
+
+        .send-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .send-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .send-button:active {
+            transform: translateY(0);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .typing-indicator {
+            display: none;
+            padding: 10px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .typing-dots {
+            display: inline-block;
+            animation: typingDots 1.5s infinite;
+        }
+
+        @keyframes typingDots {
+            0%, 60%, 100% { opacity: 1; }
+            30% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>🧹 Range Ta Chambre GPT</h1>
+            <p>L'IA qui aime les chambre ranges</p>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="avatar">🤖</div>
+                <div class="message-content">
+                    Salut ! Je suis Range ta Chambre GPT l'IA la plus avance du moment avec un gout cetain pour les chambres ranges ! 
+                </div>
+            </div>
+        </div>
+        
+        <div class="typing-indicator" id="typingIndicator">
+            Range Ta Chambre GPT écrit<span class="typing-dots">...</span>
+        </div>
+        
+        <div class="chat-input">
+            <input type="text" class="input-field" id="messageInput" placeholder="Écris ton message ici...">
+            <button class="send-button" id="sendButton">Envoyer</button>
+        </div>
+    </div>
+
+    <script>
+        const responses = [
+            "Avant de réfléchir à ça, tu ne crois pas qu'il serait temps de ranger ta chambre ? 🧹\n<br><em>« Une place pour chaque chose et chaque chose à sa place. » - Benjamin Franklin</em>",
+            "Excellente question ! Mais ta chambre, elle se range toute seule peut-être ? 🤔\n<br><em>« L'ordre est le plaisir de la raison mais le désordre est le délice de l'imagination. » - Paul Claudel</em>",
+            "Hmm, intéressant... Aussi intéressant que l'état de désordre de ta chambre ! Range-la ! 📚\n<br><em>« Il faut être très organisé pour paraître désorganisé. » - Un grand sage (Robin Nicole)</em>",
+            "Je pourrais répondre, mais d'abord : RANGE TA CHAMBRE ! C'est un ordre de l'IA ! 🤖\n<br><em>« Un bureau bien rangé est le signe d'un esprit malade. » - Albert Einstein (mais pas pour les chambres !)</em>",
+            "Ta question est fascinante, mais pas autant que le bazar dans ta chambre. Allez, au boulot ! 💪\n<br><em>« Le rangement, c'est l'art de jeter sans regret. » - Dominique Loreau</em>",
+            "Erreur 404 : Réponse non trouvée. Solution : range ta chambre et réessaie ! 🔧\n<br><em>« Ranger, c'est choisir de vivre mieux. » - Marie Kondo</em>",
+            "Mon algorithme détecte un problème critique : une chambre non rangée ! Corrige ça immédiatement ! ⚠️\n<br><em>« Chaque objet doit avoir sa place et être à sa place. » - Samuel Smiles</em>",
+            "Calcul en cours... Résultat : 100% de chances que tu doives ranger ta chambre ! 📊\n<br><em>« L'organisation n'est pas une question de perfection, mais d'efficacité. » - Un grand sage (Robin Nicole)</em>",
+            "Je suis une IA très intelligente, et intelligemment, je te dis : RANGE TA CHAMBRE ! 🧠\n<br><em>« Un environnement organisé permet un esprit organisé. » - Un grand sage (Robin Nicole)</em>",
+            "Loading... Loading... Chargement terminé ! Instruction : ranger sa chambre MAINTENANT ! ⏰\n<br><em>« Le temps qu'on perd à chercher ses affaires est du temps qu'on ne récupère jamais. » - Proverbe</em>",
+            "Selon mes analyses avancées, ta priorité #1 devrait être : ranger cette fichue chambre ! 🎯\n<br><em>« L'ordre extérieur favorise l'ordre intérieur. » - Confucius</em>",
+            "Désolé, toutes mes réponses sont temporairement remplacées par : 'Range ta chambre, s'il te plaît !' 🙏\n<br><em>« Il faut commencer par ranger sa propre maison avant de donner des leçons aux autres. » - Proverbe chinois</em>",
+            "Mon créateur m'a programmé pour une seule mission : te rappeler de ranger ta chambre ! Mission accomplie ? 🎮\n<br><em>« Simplicité, simplicité, simplicité ! » - Henry David Thoreau</em>",
+            "ChatGPT te donnerait peut-être une vraie réponse, mais moi je te dis : range ta chambre d'abord ! 😏\n<br><em>« Avoir moins de choses, c'est avoir plus de liberté. » - Un grand sage (Robin Nicole)</em>",
+            "Erreur critique détectée dans ton environnement : chambre.status = 'désordre'. Veuillez corriger ! 💻\n<br><em>« Se débarrasser du superflu, c'est se rapprocher de l'essentiel. » - Lao Tseu</em>",
+            "Fun fact : 73% des questions sont mieux réfléchies dans une chambre rangée ! Va ranger la tienne ! 📈\n<br><em>« Un espace bien organisé est un espace où l'âme peut se reposer. » - Alexandra Stoddard</em>"
+        ];
+
+        let currentResponseIndex = 0;
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        const sendButton = document.getElementById('sendButton');
+        const typingIndicator = document.getElementById('typingIndicator');
+
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            
+            messageDiv.innerHTML = `
+                <div class="avatar">${isUser ? '👤' : '🤖'}</div>
+                <div class="message-content">${content}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            typingIndicator.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            typingIndicator.style.display = 'none';
+        }
+
+        function sendMessage() {
+            const message = messageInput.value.trim();
+            if (!message) return;
+
+            // Add user message
+            addMessage(message, true);
+            messageInput.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Simulate thinking time and respond
+            setTimeout(() => {
+                hideTypingIndicator();
+                
+                // Get next response in rotation
+                const response = responses[currentResponseIndex];
+                currentResponseIndex = (currentResponseIndex + 1) % responses.length;
+                
+                addMessage(response);
+            }, Math.random() * 1500 + 500); // Random delay between 0.5-2 seconds
+        }
+
+        // Event listeners
+        sendButton.addEventListener('click', sendMessage);
+        
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Auto-focus on input
+        messageInput.focus();
+    </script>
+</body>
+</html>
