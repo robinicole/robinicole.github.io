@@ -1,7 +1,7 @@
 ---
 showDate: true
-summary: "Discovering 50 shades of note-taking"
-title: "About note-taking"
+summary: "50 shades of note-taking"
+title: "♪ Notes on note taking ♪"
 date: 2025-05-01
 draft: false
 comments: true
@@ -18,7 +18,9 @@ If you want to see by yourself I strongly recommend the two following resources:
 ## Building your own digital garden
 After browsing few of the digital gardens listed in [^1] I started to wonder how I could build my own. This is where I discovered the "second brain"[^4]community which discusses how to build second brain which build on a hype around this domain. While I appreciate the amount of information it created, it bothers me that it lead personal knowledge to be presented as a way to achieve high productivity rather than a way to beautifully represent your knowledge. I also find it somehow disappointing that you have 50 different variation of methods to build your knowledge management system which each youtuber claims is the best. There is a similar where fitness youtuber selling you different variation of their workout to achieve the perfect physique while we all know that a simple workout (5x5 for example [^6]) can fit the need of most beginners. 
 ### The theory: back to basics
-I decided to go back to the basics and read the original book about the Zettelkasten method which is one way of building a digital garden which was developped by Niklas Luhmann, a German sociologist who used this system to produce an enormous body of work. Luhmann’s approach wasn’t about productivity hacks or optimizing knowledge for output; it was a system for *thinking* and developing ideas over a lifetime. It stems from the fact that as opposed to the standard notes or articles where the structure of thought is linear (you write an article from the top to the bottom) even though our thought structure is highly non-linear and the system we use to ingest our idea should reflect this property. This is achieved by linking related notes together which enables the structure of the notes to emerge by itself as opposed to being imposed by a predefined hierarchy. This does marvels for creativity and research as it allows to find connections between ideas we would have thought disconnected otherwise.
+I decided to go back to the basics and read the original book about the Zettelkasten method which is one way of building a digital garden which was developped by Niklas Luhmann, a German sociologist who used this system to produce an enormous body of work. Luhmann’s approach wasn’t about productivity hacks or optimizing knowledge for output; it was a system for *thinking* and developing ideas over a lifetime. It stems from the fact that as opposed to the standard notes or articles where the structure of thought is linear (you write an article from the top to the bottom) even though our thought structure is highly non-linear and the system we use to ingest our idea should reflect this property. This is achieved by linking related notes together which enables the structure of the notes to emerge by itself as opposed to being imposed by a predefined hierarchy. This does marvels for creativity and research as it allows to find connections between ideas we would have thought disconnected otherwise. 
+
+The fact that the biggest progress comes from finding links between a-priori unrelated topics is fundamental. This percolation[^7] of knowledge is similar to the percolation that arise in natural phenomna such as forest fires[^8] where the fire can propagate only if the forest is dense enough to allow the fire to jump from one tree to the other. By analogy we could think that the real strength of the Zettelkasten system is going to come from having a dense knowledge graph (digital garden) with extensive linking which will allow knowledge to flow and propagate among the digital garden. 
 
 To learn more about the method, I found the book of Sönke Ahrens, “How to Take Smart Notes" to be really useful for several reasons: 
 1. It is gives you the building block of how to implement your own note-taking system but is not too prescriptive about it, following quote 'feed a ’man a fish and you feed him for a day; teach a man to fish and you feed him for a lifetime’. 
@@ -38,7 +40,7 @@ graph LR
     H --> I["202505058: Publishing From Your Zettelkasten"]
 {{< /mermaid >}}
 
-Non linear chain of thought (better)
+Non linear chain of thought (allows more refined linking between the topics)
 
 {{< mermaid >}}
 graph TD
@@ -92,7 +94,7 @@ I hope you enjoyed as much as me how the perspective of being able to build a ba
 [^1]: A collection of digital garden https://github.com/lyz-code/best-of-digital-gardens
 [^2]: An example of a digital garden https://lyz-code.github.io/blue-book/digital_garden/  
 [^3]: The result of a youtube research on Obsidian and Zettelkasten https://www.youtube.com/results?search_query=zettelkasten+and+obsidian
-
 [^4]: Second brain on youtube https://www.youtube.com/results?search_query=second+brain 
-
 [^6]: https://www.healthline.com/health/fitness/5x5-workout#weekly-program
+[^7]: https://en.wikipedia.org/wiki/Percolation
+[^8]: https://drive.google.com/file/d/12R9jPDtHOULkwcl4XF2T9wsndbazD1UM/view
