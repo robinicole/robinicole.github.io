@@ -3,7 +3,7 @@ title: "LLM Resources"
 date: 2025-09-02
 draft: false
 description: "Some no-bs LLM resources"
-tags: ["bibliograpy", "LLM"]
+tags: ["llm", "resources"]
 ---
 
 With the current buzz around LLMs, it can be hard to find information that is reliable and free from the hype noise and advertisements.

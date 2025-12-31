@@ -1,19 +1,11 @@
 ---
-keywords:
- - LLM
- - prompt engineering 
-metaAlignment: center
-showTags: true
-showPagination: true
-showSocial: true
-showDate: true
+title: "Introduction to prompt engineering (Advanced)"
+date: 2024-04-09
 draft: true
 summary: "An overview of prompt engineering to learn how to customize ChatGPT and other AI language models to suit your specific needs. This post covers essential techniques like few-shot prompting, the CO-STAR framework, and Chain of Thought reasoning, along with practical tips for creating reusable prompt templates."
-title: "Introduction to prompt engineering (Advanced)"
-lastmod: 2024-04-09
-
-# thumbnailImage: "prompting_cover.webp"
-# coverImage: "prompting_cover.webp"
+tags: ["llm", "prompt-engineering"]
+series: ["Prompt Engineering"]
+series_order: 2
 toc: true
 ---
 By the end of this post, you'll have the skills to create effective, tailored prompts for ChatGPT and other AI language models. 

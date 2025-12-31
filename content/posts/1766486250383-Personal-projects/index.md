@@ -3,7 +3,7 @@ title: "Personal projects"
 date: 2025-12-23
 draft: false
 description: "My personal projects"
-tags: ["projects"]
+tags: ["projects", "ai"]
 ---
 
 Below are some personal projects of javascript based websites created using vibe-coding. Some were created using only Claude/chatGPT other were created using agentic coding assistant such as claude Code:
