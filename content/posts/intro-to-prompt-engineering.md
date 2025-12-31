@@ -1,20 +1,12 @@
 ---
-keywords:
- - LLM
- - prompt engineering 
-metaAlignment: center
-showTags: true
-showPagination: true
-showSocial: true
-showDate: true
+title: "Introduction to prompt engineering (Beginner)"
+date: 2024-04-13
 draft: true
 summary: "A quick and simple introduction prompt engineering or how to take advantage of chatbots such as ChatGPT"
-title: "Introduction to prompt engineering (Beginner)"
-lastmod: 2024-04-13
+tags: ["llm", "prompt-engineering"]
+series: ["Prompt Engineering"]
+series_order: 1
 toc: true
-# thumbnailImage: "prompting_cover.webp"
-# coverImage: "prompting_cover.webp"
-
 ---
 
 By the end of this post, you'll know how to create effective prompts for ChatGPT and other AI language models, even if you're new to the topic!

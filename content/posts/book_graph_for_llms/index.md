@@ -1,19 +1,12 @@
 ---
-keywords:
- - LLM
- - prompt engineering 
-metaAlignment: center
-showTags: true
-showPagination: true
-showSocial: true
-showDate: true
-summary: "create visually appealing and informative book knowledge graphs using the power of Large Language Models"
 title: "Visualizing Book Summaries with Knowledge Graphs using ChatGPT"
-lastmod: 2024-04-25
+date: 2024-04-25
+draft: false
+summary: "create visually appealing and informative book knowledge graphs using the power of Large Language Models"
+tags: ["llm", "knowledge-graphs", "visualization"]
 toc: true
 thumbnailImage: "book_graph.png"
 coverImage: "book_graph_darker.png"
-comments: true
 ---
 
 # The graphs created withing this project 

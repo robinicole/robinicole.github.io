@@ -1,10 +1,9 @@
 ---
-showDate: true
-summary: "My take on where AI is taking us"
 title: "AI and our future"
 date: 2025-07-23
 draft: true
-comments: true
+summary: "My take on where AI is taking us"
+tags: ["ai", "llm"]
 ---
 
 ## Article summary as a graph
