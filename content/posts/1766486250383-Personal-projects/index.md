@@ -1,11 +1,12 @@
 ---
-title: "Personal projects"
+title: "My personal project workshop"
 date: 2025-12-23
 draft: false
-description: "My personal projects"
+description: "The home of my personal projects"
 tags: ["projects", "ai"]
 ---
 
+# Just for fun
 Below are some personal projects of javascript based websites created using vibe-coding. Some were created using only Claude/chatGPT other were created using agentic coding assistant such as claude Code:
 
 - [Taginator](/taginator.html) convert the price of good in Tagine equivalent. Why? because why not ? 
