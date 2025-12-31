@@ -3,7 +3,7 @@ showDate: true
 summary: "Investing wisely"
 title: "Get rich or invest trying"
 date: 2025-09-13
-draft: false
+draft: true
 comments: true
 ---
 
