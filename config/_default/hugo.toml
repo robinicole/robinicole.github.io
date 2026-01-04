@@ -21,7 +21,10 @@ enableEmoji = true
   pagerSize = 100
 
 [imaging]
-  anchor = 'Center'
+  anchor = 'Smart'
+  quality = 80
+  hint = 'photo'
+  resampleFilter = 'Lanczos'
 
 [taxonomies]
   tag = "tags"
