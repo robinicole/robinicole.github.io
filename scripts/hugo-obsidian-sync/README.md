@@ -29,15 +29,15 @@ pip install pyyaml
 ### 2. Create configuration
 
 ```bash
-cd /Users/robin/github/perso/robinicole.github.io/scripts/hugo-obsidian-sync
+cd /path/to/hugo-blog/scripts/hugo-obsidian-sync
 cp config.yaml.example config.yaml
 ```
 
-Edit `config.yaml` with your Obsidian vault path:
+Edit `config.yaml` with your paths:
 
 ```yaml
-obsidian_vault: ~/Documents/Obsidian/blog-posts
-hugo_content: /Users/robin/github/perso/robinicole.github.io/content/posts
+obsidian_vault: /path/to/obsidian-vault/blog-posts
+hugo_content: /path/to/hugo-blog/content/posts
 state_file: ~/.config/hugo-obsidian-sync/state.json
 ```
 
@@ -46,10 +46,10 @@ state_file: ~/.config/hugo-obsidian-sync/state.json
 To run `hugo-sync` from any folder, copy and paste this into your terminal:
 
 ```bash
-# Create the command
+# Create the command (replace /path/to/hugo-blog with your actual path)
 sudo tee /usr/local/bin/hugo-sync > /dev/null << 'EOF'
 #!/bin/bash
-python3 /Users/robin/github/perso/robinicole.github.io/scripts/hugo-obsidian-sync/sync.py "$@"
+python3 /path/to/hugo-blog/scripts/hugo-obsidian-sync/sync.py "$@"
 EOF
 
 # Make it executable
@@ -63,7 +63,7 @@ That's it! Now you can run `hugo-sync` from anywhere.
 If you don't have sudo access, add this line to your `~/.zshrc` (or `~/.bashrc`):
 
 ```bash
-alias hugo-sync='python3 /Users/robin/github/perso/robinicole.github.io/scripts/hugo-obsidian-sync/sync.py'
+alias hugo-sync='python3 /path/to/hugo-blog/scripts/hugo-obsidian-sync/sync.py'
 ```
 
 Then reload your shell:
@@ -109,7 +109,7 @@ hugo-sync --force hugo
 Create a new markdown file in your Obsidian vault's blog folder:
 
 ```
-~/Documents/Obsidian/blog-posts/my-new-post.md
+<obsidian-vault>/blog-posts/my-new-post.md
 ```
 
 Add Hugo front matter at the top:
@@ -131,7 +131,7 @@ Your content here...
 Create a folder for your post with images inside:
 
 ```
-~/Documents/Obsidian/blog-posts/my-gallery-post/
+<obsidian-vault>/blog-posts/my-gallery-post/
 ├── my-gallery-post.md
 ├── photo1.png
 └── photo2.jpg
@@ -235,6 +235,6 @@ hugo-sync --pull
 ### Run tests
 
 ```bash
-cd /Users/robin/github/perso/robinicole.github.io/scripts/hugo-obsidian-sync
+cd /path/to/hugo-blog/scripts/hugo-obsidian-sync
 python3 test_sync.py
 ```
