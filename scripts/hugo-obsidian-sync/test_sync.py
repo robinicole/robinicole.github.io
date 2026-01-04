@@ -242,12 +242,45 @@ class TestPostId:
         post.touch()
         assert get_post_id(post, self.temp_dir) == "my-post"
 
-    def test_directory_post_id(self):
+    def test_directory_post_id_hugo_style(self):
+        """Hugo uses folder/index.md convention."""
         post_dir = self.temp_dir / "my-gallery"
         post_dir.mkdir()
         post = post_dir / "index.md"
         post.touch()
         assert get_post_id(post, self.temp_dir) == "my-gallery"
+
+    def test_directory_post_id_obsidian_style(self):
+        """Obsidian uses folder/folder.md convention."""
+        post_dir = self.temp_dir / "my-gallery"
+        post_dir.mkdir()
+        post = post_dir / "my-gallery.md"
+        post.touch()
+        assert get_post_id(post, self.temp_dir) == "my-gallery"
+
+    def test_hugo_and_obsidian_post_ids_match(self):
+        """Hugo and Obsidian conventions should produce same post ID."""
+        hugo_dir = self.temp_dir / "hugo"
+        obsidian_dir = self.temp_dir / "obsidian"
+        hugo_dir.mkdir()
+        obsidian_dir.mkdir()
+
+        # Hugo style: folder/index.md
+        hugo_post_dir = hugo_dir / "my-post"
+        hugo_post_dir.mkdir()
+        hugo_post = hugo_post_dir / "index.md"
+        hugo_post.touch()
+
+        # Obsidian style: folder/folder.md
+        obs_post_dir = obsidian_dir / "my-post"
+        obs_post_dir.mkdir()
+        obs_post = obs_post_dir / "my-post.md"
+        obs_post.touch()
+
+        hugo_id = get_post_id(hugo_post, hugo_dir)
+        obsidian_id = get_post_id(obs_post, obsidian_dir)
+
+        assert hugo_id == obsidian_id == "my-post"
 
 
 def run_tests():

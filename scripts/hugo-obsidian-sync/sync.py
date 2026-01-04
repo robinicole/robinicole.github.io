@@ -61,8 +61,13 @@ def get_post_id(path: Path, base_dir: Path) -> str:
     """Get a unique identifier for a post based on its path."""
     rel_path = path.relative_to(base_dir)
 
-    # For directory-style posts (index.md), use the directory name
+    # For Hugo directory-style posts (index.md), use the directory name
     if path.name == "index.md":
+        return str(rel_path.parent)
+
+    # For Obsidian directory-style posts (folder/folder.md), use the directory name
+    # This handles the case where the file is named after its parent directory
+    if path.stem == path.parent.name:
         return str(rel_path.parent)
 
     # For single-file posts, use the filename without extension
