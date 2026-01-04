@@ -2,3 +2,4 @@ public
 __pycache__/
 */__pycache__/
 **/__pycache__/
+scripts/hugo-obsidian-sync/config.yaml
