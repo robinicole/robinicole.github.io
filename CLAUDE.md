@@ -17,7 +17,29 @@ hugo --gc --minify
 
 # Create new post
 hugo new posts/my-post-name/index.md
+
+# Update theme submodule
+git submodule update --remote themes/blowfish
 ```
+
+## Obsidian Sync
+
+Bidirectional sync tool in `scripts/hugo-obsidian-sync/` for editing posts in Obsidian.
+
+```bash
+# Install
+pip install pyyaml
+
+# Run tests
+python3 scripts/hugo-obsidian-sync/test_sync.py
+
+# Sync commands (if hugo-sync alias is configured)
+hugo-sync --pull    # Pull Hugo posts to Obsidian
+hugo-sync --push    # Push Obsidian changes to Hugo
+hugo-sync --dry-run # Preview without writing
+```
+
+Converts between formats: mermaid fenced blocks ↔ `{{< mermaid >}}`, wikilinks ↔ `{{< ref >}}`, callouts ↔ `{{< alert >}}`, Obsidian images ↔ standard markdown.
 
 ## Architecture
 
@@ -54,12 +76,3 @@ Automated via GitHub Actions (`.github/workflows/hugo.yaml`):
 - Uses Hugo Extended v0.124.0
 - Builds with `--gc --minify`
 - Deploys to GitHub Pages
-
-## Theme
-
-Blowfish theme managed as git submodule. Theme docs: https://blowfish.page/docs/
-
-When updating theme:
-```bash
-git submodule update --remote themes/blowfish
-```
