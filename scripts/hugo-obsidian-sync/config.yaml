@@ -1,0 +1,13 @@
+# Hugo-Obsidian Sync Configuration
+#
+# Copy this file to config.yaml and update the paths.
+
+# Path to your Obsidian vault posts folder
+# This is where synced posts will appear in Obsidian
+obsidian_vault:  ~/github/vault/Zettelkasten/Blog posts
+
+# Path to Hugo content/posts directory
+hugo_content: /Users/robin/github/perso/robinicole.github.io/content/posts
+
+# Where to store sync state (tracks file hashes)
+state_file: ~/.config/hugo-obsidian-sync/state.json
