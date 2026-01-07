@@ -1,9 +1,11 @@
 ---
-title: "♪ Notes on note taking ♪"
+title: ♪ Notes on note taking ♪
 date: 2025-05-01
-draft: false
-summary: "50 shades of note-taking"
-tags: ["note-taking", "productivity"]
+draft: true
+summary: 50 shades of note-taking
+tags:
+  - note-taking
+  - productivity
 ---
 
 In this article I want to discuss my approach to note taking and the recent trend of Seconds brain and digital garden. Because the second brain is somehow fashionable at the moment, there has been a lot of hype about it on youtube and this article tries to separate the base from the hype. 
@@ -84,7 +86,7 @@ graph TD
 {{< /mermaid >}}
 ### Digital Zettelkasten
 At the beginning Niklas Luhmann implemented the zettelkasten using slip note which he cross-referenced. Today however, digital offer a more convenient to store, access and browse your notes. The two software I tried to do that are Notion and Obsidian. For note taking in particular I chose Obsidian over notion for the following reason all your notes are stored in markdown i.e. in plain text, if you decide to store your notes on the obsidian server they are end-to-end encoded which means nobody except you can access them (not event he obsidien team), the linking process between notes is easier than with Notion.
-To start building your your digital knowledge graph, I suggest yo watch the some youtube video [^3] to get you started and complement this with the taking smart notes book mentioned in the section [[#The theory back to basics]]. 
+To start building your your digital knowledge graph, I suggest yo watch the some youtube video [^3] to get you started and complement this with the taking smart notes book mentioned in the section [#The theory back to basics]({{< ref "#The theory back to basics.md" >}}). 
 
 ## Conclusion
 I hope you enjoyed as much as me how the perspective of being able to build a bag of notes which are organised in a way that make sense to you which is the beauty of Zettelkasten and co. method and make them a too of choice for research and creativity. This way of storing and evaluating knowledge seems important especially in the era of LLM which are expert in interpolating idea together where I see the body of knowledge increasing faster than ever.  
