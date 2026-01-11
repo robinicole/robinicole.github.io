@@ -1,6 +1,6 @@
 ---
 title: LLM open questions
-date:
+date: 2026-01-11
 draft: false
 summary: Some random thoughts and open questions on LLMs
 tags:
@@ -12,7 +12,7 @@ toc: true
 ---
 # Claude code 
 ##  Claude code as an AI markdown editor 
- Is the difference between claude code and the standard chatGPT interface the same difference we have between a simple markdown editor and a WYSISYG editor such as Word. 
+ Is the difference between Claude code and the standard chatGPT interface the same difference we have between a simple markdown editor and a WYSISWYG editor such as Word. 
 
 Claude code seems to be more of an AI interface to an LLM which can be used for a lot of tasks beyond coding and for which the knowledge for every tasks is stored inside Markdown files instead of a database.
 
