@@ -1,5 +1,5 @@
 ---
-title: LLM open questions
+title: LLM tips
 date: 2026-01-11
 draft: false
 summary: Some random thoughts and open questions on LLMs
@@ -19,5 +19,5 @@ Claude code seems to be more of an AI interface to an LLM which can be used for 
 
 ## Document generation
 When generating documents such as presentations or diagrams, I recommend favouring plain text formats that can later be converted to your desired output format.
-For presentations, ask your LLM to use Beamer, the LaTeX presentation framework. As a bonus, Claude can run the LaTeX compilation itself and debug any errors that arise. Try using it to generate presentations summarising arXiv papers.
+For presentations, ask your LLM to use Beamer, the LaTeX presentation framework. As a bonus, Claude can run the LaTeX compilation itself and debug any errors that arise ([see this conversation for example](https://claude.ai/share/ba43da87-e11e-410c-8909-3997184dfc32)). Try using it to generate presentations summarising arXiv papers. 
 For diagrams, Mermaid and TikZ are excellent choices. For longer text documents, LaTeX remains my preferred option.
