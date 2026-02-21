@@ -1,7 +1,7 @@
 ---
 title: "Braindump: Impact of AI (find a nicer title later)"
 date: 2025-12-31
-draft: false
+draft: true
 summary: Where is the AI frenzy taking us
 tags:
   - ai
