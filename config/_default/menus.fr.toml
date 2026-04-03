@@ -1,0 +1,23 @@
+# -- Menu principal --
+
+[[main]]
+  name = "Travailler avec moi"
+  pageRef = "work-with-me"
+  weight = 5
+
+[[main]]
+  name = "Blog"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 20
+
+# -- Menu pied de page --
+
+[[footer]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10

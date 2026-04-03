@@ -1,0 +1,25 @@
+disabled = false
+languageCode = "fr"
+languageName = "Francais"
+weight = 2
+title = "Robin Nicole — IA & Ingenierie"
+
+[params]
+  displayName = "FR"
+  isoCode = "fr"
+  rtl = false
+  dateFormat = "2 January 2006"
+  description = "Robin Nicole — Ingenierie IA, du prototype a la production"
+
+[params.author]
+  name = "Robin Nicole"
+  image = "img/blowfish_logo.png"
+  imageQuality = 96
+  headline = "Ingenieur IA Full-stack"
+  bio = "Je fais passer l'IA du notebook Jupyter a la production. Si votre startup a besoin de ML qui livre vraiment, parlons-en."
+  links = [
+    { email = "mailto:your-email@example.com" },
+    { github = "https://github.com/robinicole" },
+    { ko-fi = "https://buymeacoffee.com/robin_lance_gratuite" },
+    { linkedin = "https://www.linkedin.com/in/robin-nicole-phd-54929349/" },
+  ]
