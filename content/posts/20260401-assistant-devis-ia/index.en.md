@@ -9,6 +9,10 @@ tags:
 toc: true
 ---
 
+{{< alert "circle-info" >}}
+**Automatic translation** — This article was automatically translated from French. You can read the original French version by using the language switcher at the top of the page.
+{{< /alert >}}
+
 I recently asked myself a simple question: what is the most immediately useful LLM use case for a small business with no developer and no tech budget? Not a spectacular use case -- a boring, concrete one that saves time from day one.
 
 Quote generation struck me as an ideal candidate. A quote is a semi-structured document, written in a specific tone, that combines proprietary data (catalog, rates, margins) with a specific client need. This is exactly the kind of task where LLMs excel: turning a short input ("couple, 3,000 EUR, Greece, September") into a long, structured output, drawing on provided context.

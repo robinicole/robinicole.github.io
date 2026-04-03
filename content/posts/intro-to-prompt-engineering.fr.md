@@ -9,6 +9,10 @@ series_order: 1
 toc: true
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 A la fin de cet article, vous saurez comment creer des prompts efficaces pour ChatGPT et d'autres modeles de langage IA, meme si vous debutez dans le domaine !
 N'hesitez pas a jeter un oeil a [ce generateur de prompts](https://robin-nicole.streamlit.app/), qui genere des prompts selon les principes decrits dans cet article.
 

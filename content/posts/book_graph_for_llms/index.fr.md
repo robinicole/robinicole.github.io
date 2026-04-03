@@ -9,6 +9,10 @@ thumbnailImage: "book_graph.png"
 coverImage: "book_graph_darker.png"
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 # Les graphes créés dans le cadre de ce projet
 - [A Tale of Two Cities](/a_tale_of_two_cities.html)
 - [Dream of the Red Chamber](/dream_of_the_red_chamber.html)

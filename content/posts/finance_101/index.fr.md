@@ -7,6 +7,10 @@ draft: true
 comments: true
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 {{< alert "twitter">}}
 **Historique :**
 - **13/09/2025** : Article initial

@@ -8,6 +8,10 @@ series: ["Prompt Engineering"]
 series_order: 2
 toc: true
 ---
+
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
 À la fin de cet article, vous aurez les compétences nécessaires pour créer des prompts efficaces et sur mesure pour ChatGPT et d'autres modèles de langage IA.
 N'hésitez pas à jeter un œil à [ce générateur de prompts](https://robin-nicole.streamlit.app/), qui génère des prompts selon les principes décrits dans cet article.
 

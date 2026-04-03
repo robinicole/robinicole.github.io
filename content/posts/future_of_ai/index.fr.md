@@ -9,6 +9,10 @@ tags:
   - draft
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 ## Vrac de pensees
 Ceci est un vrac de pensees a organiser en article pour decrire ou je pense que l'IA nous emmene.
 

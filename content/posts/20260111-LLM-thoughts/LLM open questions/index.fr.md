@@ -10,6 +10,10 @@ series:
 series_order:
 toc: true
 ---
+
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
 ## Claude Code comme éditeur Markdown dopé à l'IA
 La différence entre Claude Code et l'interface chatGPT classique est-elle la même que celle entre un simple éditeur Markdown et un éditeur WYSIWYG comme Word ?
 

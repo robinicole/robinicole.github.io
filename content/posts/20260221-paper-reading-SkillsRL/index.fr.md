@@ -8,6 +8,10 @@ tags:
   - PaperReading
   - ai
 ---
+
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
 Dans cet article, je passe en revue un article intitule [SkillRL](https://arxiv.org/abs/2602.08234) que j'ai lu recemment.
 
 ## Ce que l'article propose

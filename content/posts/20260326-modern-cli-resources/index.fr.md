@@ -10,6 +10,10 @@ tags:
 toc: true
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 **Cet article a été ébauché avec l'aide d'une IA et édité par un humain (moi), mais chaque outil listé ici est un outil que j'utilise vraiment au quotidien — ils viennent tous de mon `history` shell.**
 
 Les outils CLI sont vieux — et c'est justement pour ça qu'ils sont bons. Tout comme un bon bricoleur a toujours besoin d'un simple tournevis, peu importe la sophistication de ses outils électriques, tout développeur a besoin de solides fondamentaux en ligne de commande. Les abstractions de base (pipes, fichiers, flux de texte) ont survécu des décennies parce qu'elles sont composables et universelles.

@@ -18,6 +18,10 @@ title: "Comment creer un blog (comme ce site) avec Hugo et le theme TranquilPeak
 lastmod: 2024-04-06
 
 ---
+
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
 Quand il s'agit de creer un blog, des plateformes populaires comme WordPress et Wix offrent des interfaces intuitives et un large eventail de fonctionnalites. Cependant, en tant que developpeur, je privilegie la simplicite, la performance et la flexibilite. La combinaison de Hugo et GitHub cochait toutes ces cases. Hugo est un generateur de sites statiques qui permet de creer des blogs en generant des fichiers HTML statiques a partir de votre contenu, eliminant ainsi le besoin de traitement cote serveur et de requetes en base de donnees.
 
 Dans ce premier article, nous allons parcourir le processus de creation de ce blog en utilisant le generateur de sites statiques Hugo et le theme TranquilPeak. Nous couvrirons la configuration de base, l'installation du theme et quelques astuces de personnalisation pour vous aider a demarrer.

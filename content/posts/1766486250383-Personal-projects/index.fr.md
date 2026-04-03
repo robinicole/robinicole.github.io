@@ -6,6 +6,10 @@ description: "Le repaire de mes projets personnels"
 tags: ["projects", "ai"]
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 # Juste pour le plaisir
 Voici quelques projets personnels de sites web en JavaScript créés par vibe-coding. Certains ont été créés uniquement avec Claude/chatGPT, d'autres avec des assistants de codage agentiques comme Claude Code :
 

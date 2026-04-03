@@ -8,6 +8,10 @@ tags:
   - productivity
 ---
 
+{{< alert "circle-info" >}}
+**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
+{{< /alert >}}
+
 Dans cet article, je souhaite aborder mon approche de la prise de notes et la tendance récente du « second cerveau » et des jardins numériques. Le second cerveau étant en quelque sorte à la mode en ce moment, il y a eu beaucoup d'engouement autour de ce sujet sur YouTube, et cet article tente de séparer le fond du battage médiatique.
 
 ## Jardins numériques

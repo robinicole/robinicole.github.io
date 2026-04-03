@@ -49,14 +49,39 @@ Converts between formats: mermaid fenced blocks ↔ `{{< mermaid >}}`, wikilinks
 - `config/_default/` - Modular Hugo configuration
   - `hugo.toml` - Main config (theme, taxonomies, related posts)
   - `params.toml` - Theme parameters (appearance, homepage layout, article settings)
-  - `menus.en.toml` - Navigation menus
-  - `languages.en.toml` - Site metadata and author info
+  - `menus.en.toml` / `menus.fr.toml` - Navigation menus per language
+  - `languages.en.toml` / `languages.fr.toml` - Site metadata and author info per language
   - `markup.toml` - Markdown rendering (unsafe HTML enabled)
 
 ### Content Organization
 - `content/posts/` - Blog posts (Markdown with YAML front matter)
-- Posts can be single `.md` files or directories with `index.md` + assets
+- Posts use Hugo's filename-based multilingual convention: `index.en.md` / `index.fr.md` (or `post-name.en.md` / `post-name.fr.md` for single-file posts)
 - Taxonomies: tags, categories, authors, series
+
+### Multilingual / Translation
+
+The site is bilingual (English + French). English is the default language (weight 1).
+
+**File naming convention:**
+- Original English posts: `index.en.md` (or `post-name.en.md`)
+- Original French posts: `index.fr.md`
+- Translations use the same base name with the target language suffix
+
+**When adding a new post:**
+1. Write the post in its original language with the appropriate suffix (`.en.md` or `.fr.md`)
+2. Create a translation file with the other language suffix in the same directory
+3. Add a translation notice at the top of the translated file (after front matter):
+   - For FR translations: `{{< alert "circle-info" >}}\n**Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.\n{{< /alert >}}`
+   - For EN translations: `{{< alert "circle-info" >}}\n**Automatic translation** — This article was automatically translated from French. You can read the original French version by using the language switcher at the top of the page.\n{{< /alert >}}`
+4. Do NOT add the notice to the original-language file
+
+**Translation guidelines:**
+- Translate title, summary, description in front matter
+- Keep tags in English in both versions
+- Keep Hugo shortcodes, code blocks, URLs, and Mermaid diagrams unchanged
+- Keep the same date, draft status, and other metadata
+
+**Before committing changes to a post, check that both language versions are in sync.** If the original was modified, update the translation to match.
 
 ### Key Front Matter Fields
 ```yaml
