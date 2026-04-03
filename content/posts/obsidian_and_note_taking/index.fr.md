@@ -1,7 +1,7 @@
 ---
 title: "♪ Notes sur la prise de notes ♪"
 date: 2025-05-01
-draft: true
+draft: false
 summary: "50 nuances de prise de notes"
 tags:
   - note-taking

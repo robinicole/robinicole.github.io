@@ -1,7 +1,7 @@
 ---
 title: ♪ Notes on note taking ♪
 date: 2025-05-01
-draft: true
+draft: false
 summary: 50 shades of note-taking
 tags:
   - note-taking
