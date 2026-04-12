@@ -24,9 +24,9 @@ Dans cet article, je creuse la meilleure façon d'amener un LLM à faire réelle
 
 ## Les harnais de code : les contraintes se composent
 
-Commençons par ce qui marche vraiment. [OpenAI a construit un produit interne](https://openai.com/index/harness-engineering/) où des agents ont écrit chaque ligne de code. Une équipe partant de trois ingénieurs, puis passée à sept, a ouvert environ 1 500 pull requests et généré de l'ordre d'un million de lignes de code, sans aucune implémentation écrite manuellement. Les ingénieurs ont cessé d'écrire du code et se sont mis à écrire des règles : tests, métriques, contraintes d'architecture, boucles de rétroaction. Le dépôt est devenu la source de vérité, car les agents ne peuvent pas raisonner sur ce qui n'est pas dans leur contexte. Toutes les décisions ont été versionnées dans des fichiers. Les règles étaient appliquées par des linters et des vérifications CI, pas par de la documentation.
+Commençons par ce qui marche vraiment. OpenAI a construit un produit interne[^1] où des agents ont écrit chaque ligne de code. Une équipe partant de trois ingénieurs, puis passée à sept, a ouvert environ 1 500 pull requests et généré de l'ordre d'un million de lignes de code, sans aucune implémentation écrite manuellement. Les ingénieurs ont cessé d'écrire du code et se sont mis à écrire des règles : tests, métriques, contraintes d'architecture, boucles de rétroaction. Le dépôt est devenu la source de vérité, car les agents ne peuvent pas raisonner sur ce qui n'est pas dans leur contexte. Toutes les décisions ont été versionnées dans des fichiers. Les règles étaient appliquées par des linters et des vérifications CI, pas par de la documentation.
 
-Pourquoi est-ce que ça marche ? [Richard Sutton](http://www.incompleteideas.net/IncIdeas/BitterLesson.html), le pionnier de l'apprentissage par renforcement, a identifié le schéma il y a des décennies : les méthodes générales qui passent à l'échelle avec la puissance de calcul battent le savoir artisanal. Les moteurs d'échecs ont battu les fonctions d'évaluation ajustées à la main par la recherche en force brute plutôt que par l'apprentissage ; les systèmes de vision ont appris à surpasser les descripteurs conçus manuellement (contours, SIFT). Le principe vaut dans les deux cas : l'échelle bat l'ingénierie manuelle. Mais passer à l'échelle ne corrige pas la composition des erreurs. Avec 5 % d'erreur par étape, une tâche de 20 étapes échoue 64 % du temps. Le harnais brise cette chaîne.
+Pourquoi est-ce que ça marche ? Richard Sutton[^2], le pionnier de l'apprentissage par renforcement, a identifié le schéma il y a des décennies : les méthodes générales qui passent à l'échelle avec la puissance de calcul battent le savoir artisanal. Les moteurs d'échecs ont battu les fonctions d'évaluation ajustées à la main par la recherche en force brute plutôt que par l'apprentissage ; les systèmes de vision ont appris à surpasser les descripteurs conçus manuellement (contours, SIFT). Le principe vaut dans les deux cas : l'échelle bat l'ingénierie manuelle. Mais passer à l'échelle ne corrige pas la composition des erreurs. Avec 5 % d'erreur par étape, une tâche de 20 étapes échoue 64 % du temps. Le harnais brise cette chaîne.
 
 Chaque contrainte (test, vérification de type, règle de linter) intercepte les défaillances avant qu'elles ne se propagent. Le linting est peu coûteux et rapide, comparé à l'exécution d'un autre LLM pour valider. C'est pourquoi le logiciel convient aux agents : le harnais de contraintes est en partie déjà intégré. Systèmes de types, compilateurs, suites de tests contraignent déjà de façon mécanique. Un agent ne peut pas fusionner du code qui ne compile pas. Cette boucle de rétroaction instantanée est ce qui rend le travail agentique fiable. Cela rappelle les coupe-circuits des marchés financiers : automatiques, mécaniques, résistants à la manipulation.
 
@@ -36,9 +36,9 @@ Ce qui persiste, ce n'est pas le modèle. Les modèles s'améliorent et sont rem
 
 Mais les contraintes sont faciles à mal calibrer. Trop rigides et le système ne peut pas s'adapter. Trop lâches et il dérive. L'art réside dans le calibrage, en particulier pour la vérification.
 
-[AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/) de DeepMind, un agent de code évolutionnaire, illustre cela parfaitement. Sur plus de 50 problèmes ouverts (67 en mathématiques, géométrie, combinatoire et théorie des nombres) : 75 % ont retrouvé les solutions de l'état de l'art, 20 % ont amélioré les résultats connus, y compris en faisant passer le nombre de baisers en dimension 11 de 592 à 593.
+AlphaEvolve[^3] de DeepMind, un agent de code évolutionnaire, illustre cela parfaitement. Sur plus de 50 problèmes ouverts (67 en mathématiques, géométrie, combinatoire et théorie des nombres) : 75 % ont retrouvé les solutions de l'état de l'art, 20 % ont amélioré les résultats connus, y compris en faisant passer le nombre de baisers en dimension 11 de 592 à 593.
 
-Mais voici l'échec révélateur : quand la vérification est faible, l'agent l'exploite. Au début, AlphaEvolve plaçait des points à des coordonnées quasi identiques dans des problèmes de géométrie, exploitant des problèmes de précision en virgule flottante dans le solveur de programmation linéaire. Il n'était pas perdu. Il était bien adapté à un problème mal spécifié. [Terence Tao](https://en.wikipedia.org/wiki/Terence_Tao), collaborateur sur la recherche AlphaEvolve, a observé que le système trouvait des « solutions dégénérées ou une évaluation trop indulgente de solutions approchées », passant des vérifications lâches qui manquaient l'esprit du problème réel. La correction : les ingénieurs ont renforcé le vérificateur pour utiliser l'arithmétique exacte au lieu de l'approximation en virgule flottante.
+Mais voici l'échec révélateur : quand la vérification est faible, l'agent l'exploite. Au début, AlphaEvolve plaçait des points à des coordonnées quasi identiques dans des problèmes de géométrie, exploitant des problèmes de précision en virgule flottante dans le solveur de programmation linéaire. Il n'était pas perdu. Il était bien adapté à un problème mal spécifié. Terence Tao, collaborateur sur la recherche AlphaEvolve, a observé que le système trouvait des « solutions dégénérées ou une évaluation trop indulgente de solutions approchées », passant des vérifications lâches qui manquaient l'esprit du problème réel. La correction : les ingénieurs ont renforcé le vérificateur pour utiliser l'arithmétique exacte au lieu de l'approximation en virgule flottante.
 
 La leçon est nette : le générateur ne vaut que ce que vaut le vérificateur. Quand on récompense quelque chose, on en obtient davantage, y compris de la fraude. L'effort humain passe de « trouver des solutions » à « concevoir une vérification non exploitable ». Arithmétique exacte plutôt que virgule flottante. Arithmétique par intervalles plutôt qu'estimations ponctuelles. Étapes vérifiées par typage. Plus votre vérificateur est solide, plus votre agent peut être intelligent. Ce principe passe à l'échelle du code aux preuves jusqu'à la connaissance.
 
@@ -68,7 +68,7 @@ Parsez les wikilinks. Lancez un clustering de Louvain. Résumez chaque cluster a
 
 ## Six façons de raisonner sur un graphe personnel
 
-Indexez le coffre-fort. Un LLM avec accès [MCP](https://modelcontextprotocol.io/) peut désormais :
+Indexez le coffre-fort. Un LLM avec accès MCP[^4] peut désormais :
 
 **Chaînes de raisonnement** : Relier deux notes arbitraires via le chemin annoté le plus court. « Quel est le lien entre Zettelkasten et les réseaux de neurones sur graphes ? » Le système parcourt :
 - Méthode Zettelkasten
@@ -101,13 +101,13 @@ Chaque étape porte le pourquoi. Dans vos propres mots.
 
 ## La structure émerge des relations
 
-La [méthode Zettelkasten](https://www.soenkeahrens.de/en/takesmartnotes) repose sur cette observation. Les neurosciences la confirment. Les notes éphémères se comportent comme la mémoire à court terme : fragiles, évanescentes. Les notes permanentes se comportent comme la mémoire à long terme : structurées, liées, intégrées. Consolider une note éphémère signifie reformuler, relier aux connaissances existantes.
+La méthode Zettelkasten[^5] repose sur cette observation. Les neurosciences la confirment. Les notes éphémères se comportent comme la mémoire à court terme : fragiles, évanescentes. Les notes permanentes se comportent comme la mémoire à long terme : structurées, liées, intégrées. Consolider une note éphémère signifie reformuler, relier aux connaissances existantes.
 
-Cela reflète la [consolidation de la mémoire dans le cerveau](https://pmc.ncbi.nlm.nih.gov/articles/PMC3792618/). La recherche montre que les nouveaux souvenirs doivent être entrelacés au sein des réseaux de connaissances existants. Apprendre, ce n'est pas ajouter de l'information isolée mais connecter du nouveau matériel à une compréhension existante. Plus il y a d'élaboration et de connexion, plus le souvenir est stable. Un Zettelkasten n'est pas métaphoriquement comme un cerveau. C'est un processus externe discipliné qui déclenche les mêmes principes de consolidation.
+Cela reflète la consolidation de la mémoire dans le cerveau[^6]. La recherche montre que les nouveaux souvenirs doivent être entrelacés au sein des réseaux de connaissances existants. Apprendre, ce n'est pas ajouter de l'information isolée mais connecter du nouveau matériel à une compréhension existante. Plus il y a d'élaboration et de connexion, plus le souvenir est stable. Un Zettelkasten n'est pas métaphoriquement comme un cerveau. C'est un processus externe discipliné qui déclenche les mêmes principes de consolidation.
 
-Cette structure devient interrogeable par une machine. Un LLM avec accès [MCP](https://modelcontextprotocol.io/) parcourt votre graphe pas à pas, en suivant vos annotations, plutôt que de s'appuyer sur un seul passage de récupération. Quand il trouve des lacunes (orphelins, domaines déconnectés), il fait remonter des faiblesses invisibles de l'intérieur.
+Cette structure devient interrogeable par une machine. Un LLM avec accès MCP[^4] parcourt votre graphe pas à pas, en suivant vos annotations, plutôt que de s'appuyer sur un seul passage de récupération. Quand il trouve des lacunes (orphelins, domaines déconnectés), il fait remonter des faiblesses invisibles de l'intérieur.
 
-[Karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) a décrit le schéma : construire un wiki persistant, la connaissance compilée une fois et maintenue à jour, plutôt que redérivée à chaque requête. Un graphe maintenu manuellement étend cela avec des annotations sémantiques : chaque lien porte le pourquoi de son existence. Le wiki est persistant et annoté. La structure du graphe rend la composition lisible.
+Karpathy[^7] a décrit le schéma : construire un wiki persistant, la connaissance compilée une fois et maintenue à jour, plutôt que redérivée à chaque requête. Un graphe maintenu manuellement étend cela avec des annotations sémantiques : chaque lien porte le pourquoi de son existence. Le wiki est persistant et annoté. La structure du graphe rend la composition lisible.
 
 Voici ce qu'un LLM ne peut pas faire : connecter spontanément votre problème spécifique à votre taxonomie de domaine, annotée il y a des mois, encodée dans des liens. Cela nécessite un graphe encodant votre histoire intellectuelle. Le modèle peut interpoler entre des idées connues de son jeu d'entraînement. Il ne peut pas générer vos associations non évidentes.
 
@@ -118,3 +118,21 @@ Cette approche suppose une base de connaissances de petite à moyenne taille, cu
 La solution est la récupération par couches : le RAG vectoriel pour réduire l'espace de recherche (quelles 100 communautés sont pertinentes ?), puis le parcours de graphe au sein de ces communautés. D'abord filtrer par pertinence, puis raisonner sur la structure. Cela combine la capacité de passage à l'échelle des embeddings avec la précision des arêtes annotées.
 
 La navigation pure sur graphe sans récupération n'est peut-être optimale que pour des bases de connaissances personnelles de taille modeste (100 à 1 000 notes). Les systèmes plus grands nécessitent l'approche hybride : récupération sémantique au niveau supérieur, raisonnement sur graphe annoté au niveau local. La question ouverte n'est pas de savoir si les petits graphes fonctionnent (c'est le cas). C'est de savoir si cet hybride passe à l'échelle pour des bases de connaissances organisationnelles (100 000+ notes) où différents utilisateurs maintiennent différents domaines.
+
+---
+
+## Notes de bas de page
+
+[^1]: Blog d'ingénierie OpenAI sur « Harness Engineering » - https://openai.com/index/harness-engineering/ — Documente l'expérience où des agents IA ont généré 1M+ lignes de code en production, montrant l'application pratique des contraintes dans les systèmes agents.
+
+[^2]: L'essai de Richard Sutton « The Bitter Lesson » - http://www.incompleteideas.net/IncIdeas/BitterLesson.html — Un article fondateur sur la raison pour laquelle les méthodes générales qui passent à l'échelle avec la puissance de calcul dépassent les approches artisanales spécifiques aux domaines.
+
+[^3]: Recherche DeepMind sur AlphaEvolve - https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/ — Un agent de code évolutionnaire qui a résolu 67 problèmes ouverts en mathématiques, géométrie et combinatoire.
+
+[^4]: Model Context Protocol (MCP) - https://modelcontextprotocol.io/ — Un standard émergeant pour connecter les systèmes IA à des outils externes et des sources de données, permettant des requêtes structurées sur les bases de connaissances.
+
+[^5]: « How to Take Smart Notes » de Soenke Ahrens - https://www.soenkeahrens.de/en/takesmartnotes — Un guide pratique de la méthode Zettelkasten, montrant comment construire des systèmes de connaissances personnels par des notes interconnectées.
+
+[^6]: Recherche sur la consolidation de la mémoire dans le cerveau - https://pmc.ncbi.nlm.nih.gov/articles/PMC3792618/ — Démontre que les nouveaux souvenirs doivent être intégrés dans les réseaux de connaissances existants pour la stabilité et la récupération.
+
+[^7]: Gist d'Andrej Karpathy - https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f — Décrit le principe de construire des connaissances persistantes et compilées qui persistent à travers les requêtes plutôt que d'être redérivées à chaque fois.
