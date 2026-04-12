@@ -1,5 +1,6 @@
 ---
 title: "Work With Me"
+date: 2026-04-12
 description: "Gen-AI consulting for small to medium businesses. From strategy to implementation."
 ---
 

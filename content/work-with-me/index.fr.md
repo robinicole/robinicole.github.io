@@ -1,5 +1,6 @@
 ---
 title: "Travailler avec moi"
+date: 2026-04-12
 description: "Conseil en IA générative pour les PME. De la stratégie à la mise en œuvre."
 ---
 
