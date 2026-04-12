@@ -123,7 +123,7 @@ Pure graph navigation without retrieval may be optimal only for boutique persona
 
 [^1]: OpenAI's engineering blog post on Harness Engineering - https://openai.com/index/harness-engineering/ — Documents their experiment where AI agents generated 1M+ lines of code in production. Shows the practical application of constraints to agent systems.
 
-[^2]: Richard Sutton's essay "The Bitter Lesson" - http://www.incompleteideas.net/IncIdeas/BitterLesson.html — A foundational paper on why general methods that scale with computation (brute force + learning) outperform hand-crafted domain-specific knowledge over time.
+[^2]: Richard Sutton's essay "The Bitter Lesson" - http://www.incompleteideas.net/IncIdeas/BitterLesson.html — An influential blog post explaining why general methods that scale with computation (brute force + learning) outperform hand-crafted domain-specific knowledge over time.
 
 [^3]: DeepMind's research on AlphaEvolve - https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/ — An evolutionary coding agent that solved 67 open problems in mathematics, geometry, and combinatorics, including improving the kissing number in 11 dimensions.
 

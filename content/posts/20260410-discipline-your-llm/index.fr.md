@@ -125,7 +125,7 @@ La navigation pure sur graphe sans récupération n'est peut-être optimale que 
 
 [^1]: Blog d'ingénierie OpenAI sur « Harness Engineering » - https://openai.com/index/harness-engineering/ — Documente l'expérience où des agents IA ont généré 1M+ lignes de code en production, montrant l'application pratique des contraintes dans les systèmes agents.
 
-[^2]: L'essai de Richard Sutton « The Bitter Lesson » - http://www.incompleteideas.net/IncIdeas/BitterLesson.html — Un article fondateur sur la raison pour laquelle les méthodes générales qui passent à l'échelle avec la puissance de calcul dépassent les approches artisanales spécifiques aux domaines.
+[^2]: L'essai de Richard Sutton « The Bitter Lesson » - http://www.incompleteideas.net/IncIdeas/BitterLesson.html — Un article de blog influent expliquant pourquoi les méthodes générales qui passent à l'échelle avec la puissance de calcul dépassent les approches artisanales spécifiques aux domaines.
 
 [^3]: Recherche DeepMind sur AlphaEvolve - https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/ — Un agent de code évolutionnaire qui a résolu 67 problèmes ouverts en mathématiques, géométrie et combinatoire.
 
