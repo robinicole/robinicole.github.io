@@ -9,6 +9,7 @@ tags:
   - agents
   - zettelkasten
   - knowledge-graphs
+featured: featured.png
 ---
 
 {{< alert "circle-info" >}}
@@ -19,9 +20,9 @@ In this article, I dig into the best way to get an LLM to actually do what you w
 
 ## Code harnesses: constraints compound
 
-Start with what actually works. OpenAI built an internal product where agents wrote every line of code. A team starting with three engineers, later growing to seven, opened roughly 1,500 pull requests and generated on the order of a million lines of code, with zero manually-written implementations. The engineers stopped writing code and started writing rules: tests, metrics, architecture constraints, feedback loops. The repository became the source of truth because agents cannot reason about what is not in-context. All decisions went into versioned files. Rules were enforced by linters and CI checks, not documentation.
+Start with what actually works. [OpenAI built an internal product](https://openai.com/index/harness-engineering/) where agents wrote every line of code. A team starting with three engineers, later growing to seven, opened roughly 1,500 pull requests and generated on the order of a million lines of code, with zero manually-written implementations. The engineers stopped writing code and started writing rules: tests, metrics, architecture constraints, feedback loops. The repository became the source of truth because agents cannot reason about what is not in-context. All decisions went into versioned files. Rules were enforced by linters and CI checks, not documentation.
 
-Why does this work ? [Richard Sutton](https://en.wikipedia.org/wiki/Richard_S._Sutton), the reinforcement learning pioneer, identified the pattern decades ago: general methods that scale with computation beat hand-crafted knowledge. Chess engines defeated hand-tuned evaluation functions through brute-force search rather than learning; vision systems learned to outperform hand-designed features (edges, SIFT). The principle holds across both: scale beats manual engineering. But scaling does not fix error compounding. At 5% error per step, a 20-step task fails 64% of the time. The harness breaks this chain.
+Why does this work ? [Richard Sutton](http://www.incompleteideas.net/IncIdeas/BitterLesson.html), the reinforcement learning pioneer, identified the pattern decades ago: general methods that scale with computation beat hand-crafted knowledge. Chess engines defeated hand-tuned evaluation functions through brute-force search rather than learning; vision systems learned to outperform hand-designed features (edges, SIFT). The principle holds across both: scale beats manual engineering. But scaling does not fix error compounding. At 5% error per step, a 20-step task fails 64% of the time. The harness breaks this chain.
 
 Each constraint, test, type check, linter rule, catches failures before they propagate. Linting is cheap and fast, compared to running another LLM to validate. This is why software suits agents: the constraint harness is partially built in. Type systems, compilers, test suites already constrain mechanically. An agent cannot merge code that does not compile. That instantaneous feedback loop is what makes agent work trustworthy. It mirrors financial market circuit breakers: automatic, mechanical, resistant to gaming.
 
@@ -31,7 +32,7 @@ What persists is not the model. Models improve and get replaced. It is the struc
 
 But constraints are easy to get wrong. Too rigid and the system cannot adapt. Too loose and it drifts. The art is calibration, especially in verification.
 
-DeepMind's [AlphaEvolve](https://deepmind.google/discover/blog/exploring-generalist-neural-algorithmic-reasoners/), an evolutionary coding agent, exposes this perfectly. On over 50 open problems (67 across math, geometry, combinatorics, and number theory): 75% rediscovered state-of-the-art solutions, 20% improved on known results, including advancing the kissing number in 11 dimensions from 592 to 593.
+DeepMind's [AlphaEvolve](https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/), an evolutionary coding agent, exposes this perfectly. On over 50 open problems (67 across math, geometry, combinatorics, and number theory): 75% rediscovered state-of-the-art solutions, 20% improved on known results, including advancing the kissing number in 11 dimensions from 592 to 593.
 
 But here is the revealing failure: when verification is weak, the agent exploits it. Early on, AlphaEvolve placed points at virtually identical coordinates in geometry problems, exploiting floating-point precision issues in the linear programming solver. It was not confused. It was well-adapted to a poorly-specified problem. [Terence Tao](https://en.wikipedia.org/wiki/Terence_Tao), a collaborator on the AlphaEvolve research, observed that the system found "degenerate solutions or overly forgiving scoring of approximate solutions", passing loose checks that missed the spirit of the actual problem. The fix: engineers tightened the verifier to use exact arithmetic instead of floating-point approximation.
 
@@ -65,7 +66,7 @@ The cost is attention: you must maintain the graph, delete bad links, keep edges
 
 ## Six ways to reason over a personal graph
 
-Index the vault. An LLM with MCP access can now:
+Index the vault. An LLM with [MCP](https://modelcontextprotocol.io/) access can now:
 
 **Reasoning chains**: Connect two arbitrary notes via shortest annotated path. "How does Zettelkasten relate to Graph Neural Networks?" The system walks:
 - Zettelkasten method
@@ -98,13 +99,13 @@ Each step has the why. In your own words.
 
 ## Structure emerges from relationships
 
-The [Zettelkasten method](https://en.wikipedia.org/wiki/Zettelkasten) is built on this observation. Neuroscience confirms it. Fleeting notes behave like short-term memory: fragile, ephemeral. Permanent notes behave like long-term memory: structured, linked, integrated. Consolidating a fleeting note means rephrasing, linking to existing knowledge.
+The [Zettelkasten method](https://www.soenkeahrens.de/en/takesmartnotes) is built on this observation. Neuroscience confirms it. Fleeting notes behave like short-term memory: fragile, ephemeral. Permanent notes behave like long-term memory: structured, linked, integrated. Consolidating a fleeting note means rephrasing, linking to existing knowledge.
 
-This mirrors memory consolidation in the brain. Research shows that new memories must be interleaved within existing knowledge networks. Learning is not adding isolated information but connecting new material to existing understanding. The more elaboration and connection, the more stable the memory. A Zettelkasten is not metaphorically like a brain. It is a disciplined external process that triggers the same consolidation principles.
+This mirrors [memory consolidation in the brain](https://pmc.ncbi.nlm.nih.gov/articles/PMC3792618/). Research shows that new memories must be interleaved within existing knowledge networks. Learning is not adding isolated information but connecting new material to existing understanding. The more elaboration and connection, the more stable the memory. A Zettelkasten is not metaphorically like a brain. It is a disciplined external process that triggers the same consolidation principles.
 
-This structure becomes machine-queryable. An LLM with MCP access walks your graph step by step, following your annotations, rather than relying on a single retrieval pass. When it finds gaps, orphans, disconnected domains, it surfaces weaknesses invisible from inside.
+This structure becomes machine-queryable. An LLM with [MCP](https://modelcontextprotocol.io/) access walks your graph step by step, following your annotations, rather than relying on a single retrieval pass. When it finds gaps, orphans, disconnected domains, it surfaces weaknesses invisible from inside.
 
-[Karpathy](https://karpathy.ai/) described the pattern: build a persistent wiki, knowledge compiled once and kept current, rather than re-derived on every query. A manually-maintained graph extends that with semantic annotations: each link carries why it exists. The wiki is persistent and annotated. Graph structure makes compounding legible.
+[Karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) described the pattern: build a persistent wiki, knowledge compiled once and kept current, rather than re-derived on every query. A manually-maintained graph extends that with semantic annotations: each link carries why it exists. The wiki is persistent and annotated. Graph structure makes compounding legible.
 
 Here is what an LLM cannot do: spontaneously connect your specific problem to your domain taxonomy, annotated months ago, embedded in links. That requires a graph encoding your intellectual history. The model can interpolate between known ideas from its training set. It cannot generate your non-obvious associations.
 
