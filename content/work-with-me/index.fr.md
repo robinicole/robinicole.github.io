@@ -14,7 +14,7 @@ Pas le discours marketing. Pas les démos. Un impact mesuré sur votre business.
 - **Stratégie IA** — Identifier où l'IA crée vraiment de la valeur dans votre entreprise (indice : ce n'est certainement pas partout)
 - **Implémentation LLM** — Construire des outils IA qui s'intègrent à votre infrastructure
 - **Formation de l'équipe** — Autonomiser votre équipe à utiliser l'IA sans créer de dette technique
-- **De prototype en production** — Passer de « cool demo » à « résout vraiment un problème »
+- **De prototype en production** — Passer de la démonstration à la solution opérationnelle
 
 ## Pourquoi moi
 
