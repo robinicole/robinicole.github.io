@@ -14,7 +14,7 @@ Not the hype. Not the demos. Real impact on your business. I help you get there.
 - **AI Strategy** — Figure out where AI fits in your business (hint: it's probably not everywhere)
 - **LLM Implementation** — Build AI-powered tools that integrate with your existing infrastructure
 - **Team Enablement** — Help your team use AI effectively without creating tech debt
-- **Prototype to Production** — Move from "that's cool" to "it solves a real problem"
+- **Prototype to Production** — Move from "cool demo" to "actually solves a problem"
 
 ## Why me
 
