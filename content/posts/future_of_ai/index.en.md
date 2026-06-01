@@ -6,7 +6,6 @@ summary: Where is the AI frenzy taking us
 tags:
   - ai
   - llm
-  - draft
 ---
 
 ## Braindump
