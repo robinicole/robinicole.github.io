@@ -94,6 +94,29 @@ series: ["Series Name"]
 series_order: 1
 ```
 
+## Writing Style
+
+When drafting or editing article prose, write so it reads like a human wrote it — not like an LLM. This applies to article body text, summaries, and descriptions; it does not apply to code, config, or front matter.
+
+**Avoid the common AI tells:**
+- No "It's not just X, it's Y" / "isn't merely X — it's Y" constructions.
+- No "In today's fast-paced world", "In the ever-evolving landscape of", or other throat-clearing openers. Start with the actual point.
+- Drop filler hedges and intensifiers: "delve", "leverage", "robust", "seamless", "crucial", "vital", "comprehensive", "harness the power of", "unlock", "elevate", "game-changer", "testament to", "navigate the complexities".
+- No bullet lists where every item is `**Bold lead-in**: sentence.` — vary structure and write in prose when prose fits.
+- Don't end every section with a tidy summarizing sentence ("In conclusion", "Ultimately", "At the end of the day").
+- Avoid the rule-of-three rhythm on autopilot ("faster, cheaper, and more reliable") unless it's genuinely accurate.
+- Don't overuse the em-dash as a default connector; mix punctuation naturally.
+- Don't over-qualify with "it's worth noting", "it's important to remember", "that said".
+
+**Write like the existing posts:**
+- Match the voice and rhythm of articles already in `content/posts/`. Read a couple before drafting.
+- Prefer concrete, specific claims over vague generalities. Use real examples, numbers, and names.
+- Vary sentence length. Short sentences are fine. Some can run longer when the idea needs room.
+- It's fine to be direct, opinionated, and occasionally informal — this is a personal garden, not corporate copy.
+- Cut any sentence that doesn't add information. If a paragraph restates the previous one, delete it.
+
+When in doubt, read it aloud: if it sounds like a press release or a chatbot, rewrite it.
+
 ## Deployment
 
 Automated via GitHub Actions (`.github/workflows/hugo.yaml`):
