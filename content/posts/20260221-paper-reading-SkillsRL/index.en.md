@@ -5,7 +5,7 @@ draft: false
 summary:
 tags:
   - llm
-  - PaperReading
+  - paper-reading
   - ai
 ---
 In this article, I review a paper called [SkillRL](https://arxiv.org/abs/2602.08234) which I recently read.
