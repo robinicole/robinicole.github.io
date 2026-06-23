@@ -30,6 +30,10 @@ _Avoid_: Section, topic
 A static, evergreen piece of content that describes the author or advertises their work — categorically distinct from articles. Not part of the garden's knowledge content.
 _Avoid_: Article, post
 
+**Source note**:
+A note in the author's personal Zettelkasten vault (distilled Permanent Notes, sourced Literature notes, raw Fleeting notes). Source material that feeds an article — the author's own thinking on a topic — but categorically not an article itself, the same way a Page is not an article. Consulted when drafting; never published directly.
+_Avoid_: Article, draft
+
 ## Example dialogue
 
 > "Should I add a French translation for the new LLM article?"

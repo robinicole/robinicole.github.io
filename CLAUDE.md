@@ -41,6 +41,14 @@ hugo-sync --dry-run # Preview without writing
 
 Converts between formats: mermaid fenced blocks ↔ `{{< mermaid >}}`, wikilinks ↔ `{{< ref >}}`, callouts ↔ `{{< alert >}}`, Obsidian images ↔ standard markdown.
 
+## Source vault
+
+The author keeps a personal Obsidian Zettelkasten at `/Users/robin/github/vault/Zettelkasten` (a separate vault from the hugo-obsidian-sync tool above). Its `Permanent Note/` directory holds the author's distilled, atomic thinking — including AI/LLM topics like Augmenting LLMs, MCP, and agent skills that overlap directly with the blog.
+
+When drafting or researching article content on AI, LLMs, data science, or technology, consult this vault first for the author's own existing take on the topic, so articles are grounded in their distilled thinking rather than generic output. Prefer `Permanent Note/` (refined) and `Literature notes/` (sourced) over `Fleeting notes/` (raw capture).
+
+**Read-only.** Treat the vault strictly as a source — never create, edit, or delete files in it.
+
 ## Architecture
 
 **Hugo Static Site Generator** with Blowfish theme (git submodule at `themes/blowfish/`).
