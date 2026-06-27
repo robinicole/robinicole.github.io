@@ -26,6 +26,14 @@ _Avoid_: Label, keyword
 A broad topic area grouping articles at a higher level than tags (e.g. "AI", "Productivity").
 _Avoid_: Section, topic
 
+**References**:
+A section at the end of an article holding its external and source links, one per bullet. External links live here rather than inline in the prose.
+_Avoid_: Links, Sources, Bibliography
+
+**Header image**:
+The `featured.*` image in an article's post folder, auto-detected by the theme as the article's header and thumbnail. Every article has one.
+_Avoid_: Thumbnail, cover, banner
+
 **Page**:
 A static, evergreen piece of content that describes the author or advertises their work — categorically distinct from articles. Not part of the garden's knowledge content.
 _Avoid_: Article, post

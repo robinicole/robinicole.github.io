@@ -65,6 +65,8 @@ When drafting or researching article content on AI, LLMs, data science, or techn
 - `content/posts/` - Blog posts (Markdown with YAML front matter)
 - Posts use Hugo's filename-based multilingual convention: `index.en.md` / `index.fr.md` (or `post-name.en.md` / `post-name.fr.md` for single-file posts)
 - Taxonomies: tags, categories, authors, series
+- **Header image**: every article gets a `featured.*` (png/jpeg) in its post folder. Blowfish auto-detects it as the header/thumbnail. When creating a new article, always add one, picking something topical and license-free (e.g. `curl -sL https://picsum.photos/id/<id>/1600/900`).
+- **References**: external and source links go in a `## References` section at the end of the article, not inline in the closing paragraph. One link per bullet, with a short description after a colon.
 
 ### Multilingual / Translation
 
@@ -88,6 +90,7 @@ The site is bilingual (English + French). English is the default language (weigh
 - Keep tags in English in both versions
 - Keep Hugo shortcodes, code blocks, URLs, and Mermaid diagrams unchanged
 - Keep the same date, draft status, and other metadata
+- After translating, review the result for anglicisms and awkward calques (e.g. "anticlimatique"); prefer natural idiomatic French over a literal word-for-word rendering
 
 **Before committing changes to a post, check that both language versions are in sync.** If the original was modified, update the translation to match.
 
@@ -113,7 +116,7 @@ When drafting or editing article prose, write so it reads like a human wrote it 
 - No bullet lists where every item is `**Bold lead-in**: sentence.` — vary structure and write in prose when prose fits.
 - Don't end every section with a tidy summarizing sentence ("In conclusion", "Ultimately", "At the end of the day").
 - Avoid the rule-of-three rhythm on autopilot ("faster, cheaper, and more reliable") unless it's genuinely accurate.
-- Don't overuse the em-dash as a default connector; mix punctuation naturally.
+- Avoid em-dashes entirely, including in reference lists and link descriptions. Use commas, colons, or parentheses instead.
 - Don't over-qualify with "it's worth noting", "it's important to remember", "that said".
 
 **Write like the existing posts:**
