@@ -1,5 +1,5 @@
 ---
-title: "Perosnal projects"
+title: "Personal projects"
 date: 2025-12-23
 draft: false
 description: "The home of my personal projects"

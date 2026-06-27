@@ -1,5 +1,5 @@
 ---
-title: "Mon atelier de projets personnels"
+title: "Projets"
 date: 2025-12-23
 draft: false
 description: "Le repaire de mes projets personnels"
