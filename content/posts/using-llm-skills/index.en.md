@@ -21,7 +21,7 @@ A second one I leave switched on is `ponytail`. It tells the model to write the 
 
 Skills can also carry a real tool. If a job can be done by running a small program, the skill can bundle that program and tell the model when to reach for it. You do not need this part to get value from skills. It is just worth knowing the same mechanism scales from "write in this tone" up to "run this and read the result."
 
-Using one is almost anticlimactic: you type its name with a slash, like `/grill-with-docs`, and the model finds the file and follows it. Many skills also turn themselves on when what you are doing matches what they are for.
+Using one is almost too simple: you type its name with a slash, like `/grill-with-docs`, and the model finds the file and follows it. Many skills also turn themselves on when what you are doing matches what they are for.
 
 ## The practice
 

@@ -25,7 +25,7 @@ Un deuxième que je garde activé est `ponytail`. Il dit au modèle d'écrire co
 
 Les skills peuvent aussi porter un vrai outil. Si un travail peut se faire en lançant un petit programme, le skill peut embarquer ce programme et dire au modèle quand y recourir. Vous n'avez pas besoin de cette partie pour tirer parti des skills. Il vaut juste la peine de savoir que le même mécanisme passe de "écris sur ce ton" à "lance ceci et lis le résultat."
 
-En utiliser un est d'une simplicité presque décevante: vous tapez son nom précédé d'une barre oblique, comme `/grill-with-docs`, et le modèle trouve le fichier et le suit. Beaucoup de skills s'activent aussi tout seuls quand ce que vous faites correspond à ce pour quoi ils sont faits.
+En utiliser un est presque trop simple: vous tapez son nom précédé d'une barre oblique, comme `/grill-with-docs`, et le modèle trouve le fichier et le suit. Beaucoup de skills s'activent aussi tout seuls quand ce que vous faites correspond à ce pour quoi ils sont faits.
 
 ## La pratique
 
