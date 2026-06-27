@@ -14,3 +14,5 @@ Below are some personal projects of javascript based websites created using vibe
 - [Obsidian-Hugo Sync](https://github.com/robinicole/robinicole.github.io/tree/main/scripts/hugo-obsidian-sync) a command-line utility to write blog posts in Obsidian and sync them with a Hugo blog. I use it to write the articles for this blog.
 - [Synoptik.app](https://synoptik.app/) is a follow-up to the work started in the [book_graph_for_llms post]({{< ref "book_graph_for_llms.md" >}}). For simplicity, the graphs are displayed as mermaid diagrams.
 - [Xmas List](https://xmas-list-three.vercel.app/) a Christmas list CRM (Work in progress).
+- [Prêt à parler Institute](https://pret-a-parler.institute/) a showcase site for a London-based French tutor, presenting her courses for students from primary school through A-levels and exam preparation.
+- [So Londres Guide](https://so-londres-guide.com/) a site promoting French-language themed guided tours of London (rock history, Harry Potter, street art, gastronomy) with booking information.
