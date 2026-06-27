@@ -11,7 +11,7 @@ tags: ["projects", "ai"]
 {{< /alert >}}
 
 # Juste pour le plaisir
-Voici quelques projets personnels de sites web en JavaScript créés par vibe-coding. Certains ont été créés uniquement avec Claude/chatGPT, d'autres avec des assistants de codage agentiques comme Claude Code :
+Quelques projets personnels de sites web en JavaScript créés par vibe-coding. Certains ont été créés uniquement avec Claude/chatGPT sur le web et beaucoup, beaucoup de copier/coller, d'autres avec des assistants de codage agentiques comme Claude Code :
 
 - [Taginator](/taginator.html) convertit le prix des biens en équivalent Tagine. Pourquoi ? Parce que pourquoi pas ?
 - [Range ta chambre GPT](/rangetachambreGPT.html) Certains disent que les chatbots peuvent faire perdre du temps et distraire les enfants de leurs tâches quotidiennes comme ranger leur chambre, c'est pourquoi j'ai créé rangeTaChambre GPT, un site web à la chatGPT qui dit à votre enfant de ranger sa chambre. Même s'il ressemble à chatGPT, il est 100% sans IA générative.
