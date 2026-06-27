@@ -2,7 +2,7 @@
 title: "Visualizing Book Summaries with Knowledge Graphs"
 date: 2024-04-25
 draft: false
-summary: "Turning an LLM's text output into book knowledge graphs by constraining it to a schema"
+summary: "Turning LLM text output into book knowledge graphs by constraining it to a schema"
 tags: ["llm", "knowledge-graphs", "visualization"]
 toc: true
 thumbnailImage: "book_graph.png"

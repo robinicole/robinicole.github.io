@@ -2,7 +2,7 @@
 title: "Visualiser des résumés de livres avec des graphes de connaissances"
 date: 2024-04-25
 draft: false
-summary: "Transformer la sortie texte d'un LLM en graphes de connaissances de livres en la contraignant à un schéma"
+summary: "Transformer la sortie texte des LLM en graphes de connaissances de livres en la contraignant à un schéma"
 tags: ["llm", "knowledge-graphs", "visualization"]
 toc: true
 thumbnailImage: "book_graph.png"
