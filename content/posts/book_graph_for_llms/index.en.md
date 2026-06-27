@@ -1,42 +1,32 @@
 ---
-title: "Visualizing Book Summaries with Knowledge Graphs using ChatGPT"
+title: "Visualizing Book Summaries with Knowledge Graphs"
 date: 2024-04-25
 draft: false
-summary: "create visually appealing and informative book knowledge graphs using the power of Large Language Models"
+summary: "Turning an LLM's text output into book knowledge graphs by constraining it to a schema"
 tags: ["llm", "knowledge-graphs", "visualization"]
 toc: true
 thumbnailImage: "book_graph.png"
 coverImage: "book_graph_darker.png"
 ---
 
-# The graphs created withing this project 
-- [A Tale of Two Cities](/a_tale_of_two_cities.html)
-- [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
-- [The Alchemyst](/the_alchemyst.html)
-- [The Little Prince](/the_little_prince.html)
-
-An image of the knowledge graph created for the little prince
-
-![An image of a graph](/little_prince.png)
+![The knowledge graph for The Little Prince](/little_prince.png)
 
 # Introduction
-Large language models like ChatGPT have the remarkable ability to extract information from documents and present it in a concise and easy to undertand format. However, the standard ChatGPT output of chatGPT is limited to text and images. In this article, we will explore how to leverage ChatGPT's capabilities and constrain its output to create visually appealing knowledge graphs that summarize books similar to this [this graph that symmarizes the famous "A tale of two cities"](/a_tale_of_two_cities.html)
+ChatGPT is good at reading a document and handing you back the gist. What it gives you, though, is a wall of text. But text is a one-dimensional readout of something that isn't: a book is a web of characters, places, and ideas that point at each other. So I wanted to force the output into that shape, to stop asking the model for prose and ask it for a data structure instead, a set of nodes and edges you can then draw. The result looks like the graph above.
 
-The reason why I wanted to investigate Knowledge graph visualizations is because they can be am educational tool when used with reading a book. It's important to note that these graphs are not meant to replace the act of reading itself, as they cannot fully capture the depth and nuance of the text. In fact, **the graph may not be very useful without the context and knowledge gained from actually reading the book**.
-However, knowledge graphs can **serve as a valuable aid, especially when readers find themselves lost or overwhelmed in the middle of a complex book**. By providing a bigger picture of the main concepts and their relationships, these visualizations can help readers regain  see the the book in its globality and make it easier to understand how different parts of the book fit together and contribute to the overall message or theme.
+One caveat before the demo. A graph like this does not replace reading the book; hand it to someone who has never opened the novel and it's close to noise. It earns its keep in the middle of a long, tangled book, when you've lost track of who is related to whom and why a scene 200 pages ago matters now. Think of it as a map you consult when lost, not a substitute for the journey.
 
-## Examples of knowledge graphs
-Below are some examples of knowledge graphs for well-known books. Clicking on a link will display the corresponding knowledge graph. When you hover over a node or link in the graph, you will see a description of that particular node or link, providing more context and information about its significance within the book's narrative or structure.
+## The graphs
+Click a link to open one. Hover over any node or edge for a description of what it represents.
 - [A Tale of Two Cities](/a_tale_of_two_cities.html)
 - [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
 - [The Alchemyst](/the_alchemyst.html)
 - [The Little Prince](/the_little_prince.html)
 
-In the rest of this article I will describe the to generate the graphs above: 
 # Implementation
-The code to generate knowledge graphs from book summaries using ChatGPT is available in [this GitHub repo](https://github.com/robinicole/llm-graph). The process is straightforward and involves the following steps:
+The full code lives in [this GitHub repo](https://github.com/robinicole/llm-graph). There are only three moving parts.
 
-1. Define a Pydantic model to specify the structure of the knowledge graph. The graph consists of nodes and links, where each node represents a main concept and each link represents a connection between two concepts. The Pydantic model is defined as follows:
+First, describe the shape you want with a Pydantic model: a set of nodes, each a concept, and a set of links between them. This is the contract the model has to fill in.
 
 ```python
 from pydantic import BaseModel
@@ -60,7 +50,7 @@ class KnowledgeGraph(BaseModel):
     name: str
 ```
 
-2. Prompt ChatGPT to generate a JSON object that adheres to the specified Pydantic model. The prompt instructs ChatGPT to summarize a given book title into a knowledge graph with 10 nodes and 20 links, ensuring that the resulting graph is visually appealing and provides a good overview of the book. The `instructor` library is used to constrain ChatGPT's output to match the Pydantic model.
+Second, ask the model to fill it in. The prompt says: summarize this book as a graph with 10 nodes and 20 links, no self-loops, no duplicate edges. The `instructor` library does the real work here, it constrains the output so you get back an actual `KnowledgeGraph` object and not a string you have to parse and pray over. The 10-and-20 numbers are arbitrary; they're just what looked readable on screen. Push them higher and the graph turns into spaghetti.
 
 ```python
 from functools import lru_cache
@@ -84,7 +74,7 @@ def get_knowledge_graph_object(
     )
 ```
 
-3. Parse the generated Pydantic model and visualize it as a knowledge graph using the `pyvis` library.
+Third, draw it. The object is just nodes and edges, so any graph library will do; I used `pyvis` because it spits out an interactive HTML file you can pan and hover.
 
 ```python
 from pyvis.network import Network
@@ -107,12 +97,7 @@ def draw_kg_with_pyvis(knowledge_graph: KnowledgeGraph):
     return net.show(f"{knowledge_graph.name}.html")
 ```
 
-By following these steps, you can leverage the power of ChatGPT to generate informative and visually appealing knowledge graphs that summarize books. The `instructor` library ensures that the generated output adheres to the specified Pydantic model, while the `pyvis` library enables the visualization of the knowledge graph in an interactive and user-friendly format.
-
+That's the whole pipeline: a schema, a constrained call, a plotting library.
 
 # Conclusion
-In this article I shared with you some cool things you can do by combining the power of structured generation and python plotting library to create pretty chatGPT powered vizualization using chatGPT. Please have a look at the vizualisations I already created here 
-- [A Tale of Two Cities](/a_tale_of_two_cities.html)
-- [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
-- [The Alchemyst](/the_alchemyst.html)
-- [The Little Prince](/the_little_prince.html)
+The lesson is bigger than book summaries. Once you can pin the model's output to a schema, the LLM stops being a thing you read and becomes a component you can wire into a program. Here the schema was a graph and the program was a plot; swap either one and the recipe carries over.

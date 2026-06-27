@@ -1,8 +1,8 @@
 ---
-title: "Visualiser des résumés de livres avec des graphes de connaissances grâce à ChatGPT"
+title: "Visualiser des résumés de livres avec des graphes de connaissances"
 date: 2024-04-25
 draft: false
-summary: "Créer des graphes de connaissances de livres visuellement attrayants et informatifs grâce à la puissance des grands modèles de langage"
+summary: "Transformer la sortie texte d'un LLM en graphes de connaissances de livres en la contraignant à un schéma"
 tags: ["llm", "knowledge-graphs", "visualization"]
 toc: true
 thumbnailImage: "book_graph.png"
@@ -13,35 +13,24 @@ coverImage: "book_graph_darker.png"
 **Traduction automatique** — Cet article a ete traduit automatiquement depuis l'anglais. Vous pouvez consulter la version originale en anglais via le selecteur de langue en haut de la page.
 {{< /alert >}}
 
-# Les graphes créés dans le cadre de ce projet
-- [A Tale of Two Cities](/a_tale_of_two_cities.html)
-- [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
-- [The Alchemyst](/the_alchemyst.html)
-- [The Little Prince](/the_little_prince.html)
-
-Une image du graphe de connaissances créé pour Le Petit Prince
-
-![Une image d'un graphe](/little_prince.png)
+![Le graphe de connaissances du Petit Prince](/little_prince.png)
 
 # Introduction
-Les grands modèles de langage comme ChatGPT ont la capacité remarquable d'extraire des informations de documents et de les présenter dans un format concis et facile à comprendre. Cependant, la sortie standard de ChatGPT se limite au texte et aux images. Dans cet article, nous allons explorer comment exploiter les capacités de ChatGPT et contraindre sa sortie pour créer des graphes de connaissances visuellement attrayants qui résument des livres, à l'image de [ce graphe qui résume le célèbre « A Tale of Two Cities »](/a_tale_of_two_cities.html).
+ChatGPT sait lire un document et vous en rendre l'essentiel. Mais ce qu'il vous rend, c'est un mur de texte. Or le texte est une lecture à une dimension de quelque chose qui ne l'est pas : un livre est une toile de personnages, de lieux et d'idées qui se renvoient les uns aux autres. J'ai donc voulu forcer la sortie à prendre cette forme, cesser de demander de la prose au modèle pour lui demander à la place une structure de données, un ensemble de noeuds et d'arêtes que l'on peut ensuite dessiner. Le résultat ressemble au graphe ci-dessus.
 
-La raison pour laquelle j'ai voulu explorer les visualisations par graphes de connaissances est qu'elles peuvent constituer un outil pédagogique complémentaire à la lecture d'un livre. Il est important de noter que ces graphes ne sont pas destinés à remplacer l'acte de lire en lui-même, car ils ne peuvent pas capturer pleinement la profondeur et les nuances du texte. En fait, **le graphe peut ne pas être très utile sans le contexte et les connaissances acquis en lisant réellement le livre**.
-Cependant, les graphes de connaissances peuvent **servir d'aide précieuse, surtout lorsque les lecteurs se sentent perdus ou submergés au milieu d'un livre complexe**. En offrant une vue d'ensemble des concepts principaux et de leurs relations, ces visualisations peuvent aider les lecteurs à voir le livre dans sa globalité et faciliter la compréhension de la façon dont les différentes parties du livre s'articulent et contribuent au message ou au thème général.
+Une réserve avant la démonstration. Un graphe comme celui-ci ne remplace pas la lecture du livre ; donnez-le à quelqu'un qui n'a jamais ouvert le roman et ce sera presque du bruit. Il devient utile au milieu d'un livre long et touffu, quand on a perdu le fil de qui est lié à qui et de la raison pour laquelle une scène lue 200 pages plus tôt compte maintenant. Voyez-le comme une carte que l'on consulte quand on est perdu, pas comme un substitut au voyage.
 
-## Exemples de graphes de connaissances
-Voici quelques exemples de graphes de connaissances pour des livres bien connus. Cliquer sur un lien affichera le graphe de connaissances correspondant. Lorsque vous survolez un noeud ou un lien dans le graphe, vous verrez une description de cet élément particulier, fournissant plus de contexte et d'informations sur sa signification au sein de la narration ou de la structure du livre.
+## Les graphes
+Cliquez sur un lien pour en ouvrir un. Survolez un noeud ou une arête pour obtenir une description de ce qu'il représente.
 - [A Tale of Two Cities](/a_tale_of_two_cities.html)
 - [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
 - [The Alchemyst](/the_alchemyst.html)
 - [The Little Prince](/the_little_prince.html)
 
-Dans la suite de cet article, je décrirai la méthode pour générer les graphes ci-dessus :
-
 # Implémentation
-Le code pour générer des graphes de connaissances à partir de résumés de livres avec ChatGPT est disponible dans [ce dépôt GitHub](https://github.com/robinicole/llm-graph). Le processus est simple et comprend les étapes suivantes :
+Tout le code se trouve dans [ce dépôt GitHub](https://github.com/robinicole/llm-graph). Il n'y a que trois pièces mobiles.
 
-1. Définir un modèle Pydantic pour spécifier la structure du graphe de connaissances. Le graphe est composé de noeuds et de liens, où chaque noeud représente un concept principal et chaque lien représente une connexion entre deux concepts. Le modèle Pydantic est défini comme suit :
+D'abord, décrire la forme voulue avec un modèle Pydantic : un ensemble de noeuds, chacun un concept, et un ensemble de liens entre eux. C'est le contrat que le modèle devra remplir.
 
 ```python
 from pydantic import BaseModel
@@ -65,7 +54,7 @@ class KnowledgeGraph(BaseModel):
     name: str
 ```
 
-2. Demander à ChatGPT de générer un objet JSON conforme au modèle Pydantic spécifié. Le prompt demande à ChatGPT de résumer un livre donné sous forme de graphe de connaissances avec 10 noeuds et 20 liens, en s'assurant que le graphe résultant soit visuellement attrayant et fournisse un bon aperçu du livre. La bibliothèque `instructor` est utilisée pour contraindre la sortie de ChatGPT à correspondre au modèle Pydantic.
+Ensuite, demander au modèle de le remplir. Le prompt dit : résume ce livre sous forme de graphe avec 10 noeuds et 20 liens, sans boucle sur soi-même ni arête en double. C'est la bibliothèque `instructor` qui fait le vrai travail ici : elle contraint la sortie pour que vous récupériez un véritable objet `KnowledgeGraph` et non une chaîne de caractères qu'il faut parser en croisant les doigts. Les nombres 10 et 20 sont arbitraires ; c'est juste ce qui restait lisible à l'écran. Augmentez-les et le graphe vire au plat de spaghettis.
 
 ```python
 from functools import lru_cache
@@ -89,7 +78,7 @@ def get_knowledge_graph_object(
     )
 ```
 
-3. Parser le modèle Pydantic généré et le visualiser sous forme de graphe de connaissances avec la bibliothèque `pyvis`.
+Enfin, le dessiner. L'objet n'est qu'un ensemble de noeuds et d'arêtes, donc n'importe quelle bibliothèque de graphes ferait l'affaire ; j'ai pris `pyvis` parce qu'elle produit un fichier HTML interactif que l'on peut déplacer et survoler.
 
 ```python
 from pyvis.network import Network
@@ -112,11 +101,7 @@ def draw_kg_with_pyvis(knowledge_graph: KnowledgeGraph):
     return net.show(f"{knowledge_graph.name}.html")
 ```
 
-En suivant ces étapes, vous pouvez exploiter la puissance de ChatGPT pour générer des graphes de connaissances informatifs et visuellement attrayants qui résument des livres. La bibliothèque `instructor` garantit que la sortie générée respecte le modèle Pydantic spécifié, tandis que la bibliothèque `pyvis` permet la visualisation du graphe de connaissances dans un format interactif et convivial.
+Voilà toute la chaîne : un schéma, un appel contraint, une bibliothèque de tracé.
 
 # Conclusion
-Dans cet article, j'ai partagé avec vous des choses intéressantes que l'on peut faire en combinant la puissance de la génération structurée et des bibliothèques de visualisation Python pour créer de jolies visualisations alimentées par ChatGPT. N'hésitez pas à consulter les visualisations que j'ai déjà créées ici :
-- [A Tale of Two Cities](/a_tale_of_two_cities.html)
-- [Dream of the Red Chamber](/dream_of_the_red_chamber.html)
-- [The Alchemyst](/the_alchemyst.html)
-- [The Little Prince](/the_little_prince.html)
+La leçon dépasse les résumés de livres. Dès lors qu'on peut épingler la sortie du modèle à un schéma, le LLM cesse d'être quelque chose qu'on lit pour devenir un composant qu'on branche dans un programme. Ici le schéma était un graphe et le programme un tracé ; remplacez l'un ou l'autre et la recette tient toujours.
