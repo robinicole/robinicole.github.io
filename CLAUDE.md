@@ -105,6 +105,8 @@ series: ["Series Name"]
 series_order: 1
 ```
 
+**Title and summary text:** keep them free of apostrophes and other special characters (they render in the page header). Reword to avoid them, e.g. "LLM's output" → "LLM output", "d'un LLM" → "des LLM".
+
 ## Writing Style
 
 When drafting or editing article prose, write so it reads like a human wrote it — not like an LLM. This applies to article body text, summaries, and descriptions; it does not apply to code, config, or front matter.
