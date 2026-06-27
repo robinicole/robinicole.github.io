@@ -1,5 +1,5 @@
 ---
-title: A (growing?) list of resources on LLMs
+title: Awesome LLMs
 date: 2025-09-02
 draft: false
 description: Some no-bs LLM resources

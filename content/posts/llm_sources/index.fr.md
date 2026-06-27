@@ -1,5 +1,5 @@
 ---
-title: Une liste (croissante ?) de ressources sur les LLMs
+title: Awesome LLMs
 date: 2025-09-02
 draft: false
 description: Quelques ressources sans blabla sur les LLMs
