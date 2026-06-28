@@ -6,7 +6,7 @@
 # baseURL = "https://your_domain.com/"
 defaultContentLanguage = "en"
 
-theme = "blowfish"
+theme = "PaperMod"
 enableRobotsTXT = true
 summaryLength = 0
 
