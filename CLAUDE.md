@@ -136,7 +136,7 @@ When in doubt, read it aloud: if it sounds like a press release or a chatbot, re
 
 Automated via GitHub Actions (`.github/workflows/hugo.yaml`):
 - Triggers on push to `main` branch
-- Uses Hugo Extended v0.124.0
+- Uses Hugo Extended v0.147.1 (PaperMod requires >=0.146.0)
 - Builds with `--gc --minify`
 - Deploys to GitHub Pages
 
