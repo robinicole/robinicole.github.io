@@ -2,7 +2,7 @@
 
 [[main]]
   name = "Travailler avec moi"
-  pageRef = "work-with-me"
+  url = "https://withrobin.space/fr"
   weight = 5
 
 [[main]]

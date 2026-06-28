@@ -51,7 +51,9 @@ When drafting or researching article content on AI, LLMs, data science, or techn
 
 ## Architecture
 
-**Hugo Static Site Generator** with Blowfish theme (git submodule at `themes/blowfish/`).
+**Hugo Static Site Generator** with the PaperMod theme (git submodule at `themes/PaperMod/`). Blowfish (`themes/blowfish/`) is still in the repo as the previous theme.
+
+The switch from Blowfish to PaperMod relies on a few project-level overrides under `layouts/` (shortcode stubs, an `author.html` partial, a `schema_json.html` partial, and a `header.html` partial). To understand them or to **switch back to Blowfish**, see `docs/adr/0001-switch-theme-to-papermod.md` — it documents every override and the revert steps. `params.toml` is still Blowfish-shaped; PaperMod ignores the keys it doesn't recognize.
 
 ### Configuration Structure
 - `config/_default/` - Modular Hugo configuration

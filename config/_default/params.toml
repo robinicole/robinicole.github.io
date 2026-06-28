@@ -1,3 +1,4 @@
+disableSpecial1stPost = true  # PaperMod: render all homepage posts uniformly (no hero first post)
 colorScheme = "blowfish"
 defaultAppearance = "light"
 autoSwitchAppearance = true

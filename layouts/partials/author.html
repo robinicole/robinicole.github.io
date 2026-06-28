@@ -1,0 +1,9 @@
+{{- $author := (.Params.author | default site.Params.author) }}
+{{- $type := (printf "%T" $author) }}
+{{- if (or (eq $type "[]string") (eq $type "[]interface {}")) }}
+{{- (delimit $author ", ") }}
+{{- else if (or (eq $type "map[string]interface {}") (eq $type "maps.Params")) }}
+{{- with $author.name }}{{ . }}{{ end }}
+{{- else }}
+{{- $author }}
+{{- end }}
