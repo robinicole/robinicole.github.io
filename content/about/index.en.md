@@ -2,7 +2,7 @@
 title: "About me"
 date: 2026-09-20
 description: "Who writes this thought garden."
-showDate: false
+hideMeta: true
 ---
 
 I'm Robin, a full-stack AI engineer with a PhD. I take AI from Jupyter notebooks to production: data science, software engineering, and LLM systems that actually ship.

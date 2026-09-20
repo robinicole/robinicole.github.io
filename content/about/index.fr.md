@@ -2,7 +2,7 @@
 title: "A propos"
 date: 2026-09-20
 description: "Qui ecrit ce jardin de pensees."
-showDate: false
+hideMeta: true
 ---
 
 Je suis Robin, ingenieur IA full-stack, docteur en physique. Je fais passer l'IA du notebook Jupyter a la production : data science, ingenierie logicielle et systemes LLM qui sortent vraiment en prod.

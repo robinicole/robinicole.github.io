@@ -1,8 +1,7 @@
 {{- $author := (.Params.author | default site.Params.author) }}
-{{- $type := (printf "%T" $author) }}
-{{- if (or (eq $type "[]string") (eq $type "[]interface {}")) }}
+{{- if reflect.IsSlice $author }}
 {{- (delimit $author ", ") }}
-{{- else if (or (eq $type "map[string]interface {}") (eq $type "maps.Params")) }}
+{{- else if reflect.IsMap $author }}
 {{- with $author.name }}{{ . }}{{ end }}
 {{- else }}
 {{- $author }}
