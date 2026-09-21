@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Robin Nicole — AI Engineering"
+title = "Robin Nicole"
 
 [params]
   displayName = "EN"
@@ -11,15 +11,15 @@ title = "Robin Nicole — AI Engineering"
   dateFormat = "2 January 2006"
   # logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
-  description = "Robin Nicole — AI engineering, from prototype to production"
+  description = "Robin Nicole"
   # copyright = "Copy, _right?_ :thinking_face:"
 
 [params.author]
   name = "Robin (like \"Robin Hood\")"
   image = "img/blowfish_logo.png"
   imageQuality = 96
-  headline = "Full-stack AI Engineer (The tallest AI engineer in the room)"
-  bio = "I take AI from Jupyter notebooks to production. If your startup needs ML that actually ships, let's talk."
+  headline = "The tallest engineer in the room"
+  bio = "Problem Solver since 2013"
  links = [
 #     { email = "mailto:your-email@example.com" },
 #     { link = "https://link-to-some-website.com/" },

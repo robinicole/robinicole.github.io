@@ -2,21 +2,21 @@ disabled = false
 languageCode = "fr"
 languageName = "Francais"
 weight = 2
-title = "Robin Nicole — IA & Ingenierie"
+title = "Robin Nicole"
 
 [params]
   displayName = "FR"
   isoCode = "fr"
   rtl = false
   dateFormat = "2 January 2006"
-  description = "Robin Nicole — Ingenierie IA, du prototype a la production"
+  description = "Robin Nicole"
 
 [params.author]
-  name = "Robin Nicole"
+  name = "Robin (comme \"Robin des Bois\")"
   image = "img/blowfish_logo.png"
   imageQuality = 96
-  headline = "Ingenieur IA Full-stack"
-  bio = "Je fais passer l'IA du notebook Jupyter a la production. Si votre startup a besoin de ML qui livre vraiment, parlons-en."
+  headline = "ML & AI (the talles engineer in the room)"
+  bio = "Resolveur de problemes depuis 2013"
   links = [
 #     { email = "mailto:your-email@example.com" },
     { github = "https://github.com/robinicole" },

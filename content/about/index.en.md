@@ -1,17 +1,15 @@
 ---
 title: "About me"
 date: 2026-09-20
-description: "Who writes this thought garden."
+description: ""
 hideMeta: true
 ---
 
-I'm Robin, a full-stack AI engineer with a PhD. I take AI from Jupyter notebooks to production: data science, software engineering, and LLM systems that actually ship.
+Currently working at [Kingfisher](https://medium.com/kingfisher-technology/subpage/509445784c2d) ([B&Q](https://www.diy.com/), [Screwfix](https://www.screwfix.com/)) on demand forecasting / Causal ML for DIY retail, before that I was doing NLP for [Reach Plc.](https://www.reachplc.com/) ([InYourArea.co.uk](https://www.inyourarea.co.uk/)) and MLOps / LLM for [Sojern](https://www.sojern.com/) (travel marketing).
 
-This site is my thought garden. I write here about AI, LLMs, data science, and whatever else I'm chewing on. Posts are notes I'm still refining, not polished articles, so expect opinions and rough edges.
-
-If you'd rather work together than read, see [withrobin.space](https://withrobin.space/en).
+During my PhD I studied the learning dynamics (reinforcement learning) of multi-agent systems, interpreted through game theory.
 
 ## Elsewhere
 
-- [GitHub](https://github.com/robinicole): code and side projects
+- [GitHub](https://github.com/robinicole): code I write
 - [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/): professional background

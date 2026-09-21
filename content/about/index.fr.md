@@ -1,17 +1,15 @@
 ---
 title: "A propos"
 date: 2026-09-20
-description: "Qui ecrit ce jardin de pensees."
+description: ""
 hideMeta: true
 ---
 
-Je suis Robin, ingenieur IA full-stack, docteur en physique. Je fais passer l'IA du notebook Jupyter a la production : data science, ingenierie logicielle et systemes LLM qui sortent vraiment en prod.
+Actuellement chez [Kingfisher](https://medium.com/kingfisher-technology/subpage/509445784c2d) ([Castorama](https://www.castorama.fr/), [Brico Depot](https://www.bricodepot.fr/)) en charge de la prevision de la demande et du ML causal pour le bricolage. Avant cela, je faisais du NLP pour [Reach Plc.](https://www.reachplc.com/) ([InYourArea.co.uk](https://www.inyourarea.co.uk/)) et du MLOps / LLM pour [Sojern](https://www.sojern.com/) (marketing touristique).
 
-Ce site est mon jardin de pensees. J'y ecris sur l'IA, les LLM, la data science et tout ce qui m'occupe l'esprit. Les articles sont des notes en cours de maturation, pas des textes leches : attendez-vous a des opinions et des bords un peu bruts.
-
-Si vous preferez travailler avec moi plutot que me lire, rendez-vous sur [withrobin.space](https://withrobin.space/fr).
+Pendant mon doctorat, j'ai etudie les dynamiques d'apprentissage (apprentissage par renforcement) des systemes multi-agents, interpretees a travers la theorie des jeux.
 
 ## Ailleurs
 
-- [GitHub](https://github.com/robinicole) : code et projets perso
+- [GitHub](https://github.com/robinicole) : le code que j'ecris
 - [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/) : parcours professionnel
