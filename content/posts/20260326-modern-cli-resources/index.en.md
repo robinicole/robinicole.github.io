@@ -12,9 +12,11 @@ toc: true
 
 **This article was drafted with AI and edited by a human (me), but every tool listed here is one I actually use daily. They all come from my shell `history`.**
 
-CLI tools are old, and that is exactly why they are good. Just like every handyman needs a simple screwdriver no matter how advanced power tools get, every developer needs solid command-line fundamentals. The basic abstractions (pipes, files, text streams) have survived decades because they are composable and universal.
+AI coding is here to stay, and I love it. But as John Naughton [wrote in the Guardian](https://www.theguardian.com/technology/2025/mar/16/ai-software-coding-programmer-expertise-jobs-threat), you may no longer need code to be a programmer, **you still need expertise**. A good part of that expertise is unglamorous: knowing your way around a terminal. Like a handyman who keeps a screwdriver next to their power tools, every developer needs command-line fundamentals. Pipes, files and text streams have lasted decades because they are composable and universal.
 
-Here is a list of a few simple tools that make my workflow smoother. Because we are in the age of AI, I also added Claude Code at the end. I firmly believe that AI and the CLI are a natural fit: most of what makes LLMs powerful today is their ability to use tools, and the terminal is the oldest tool-use interface we have ([this talk](https://www.youtube.com/watch?v=AFUww-Df0C4) develops the idea).
+They are also what LLMs rely on: the terminal is the oldest tool-use interface we have, and Rémi Louf's talk [AI needs its Unix moment](https://www.youtube.com/watch?v=AFUww-Df0C4) even argues for treating LLMs as command-line tools, a path I find promising. **A house still needs solid foundations, and those are the modern CLI.** I assume that is why [OpenAI acquired Astral](https://www.bloomberg.com/news/articles/2026-03-19/openai-to-acquire-python-startup-astral-expanding-push-into-coding), the company behind uv and Ruff, to build the tooling around Codex.
+
+Here are the tools that make my workflow smoother, with Claude Code at the end.
 
 ## Terminal emulators
 
@@ -22,13 +24,13 @@ Here is a list of a few simple tools that make my workflow smoother. Because we 
 
 ## Shell and prompt
 
-- [Zsh](https://www.zsh.org/): the default on macOS since Catalina, so you might already be using it. I pair it with [Oh My Zsh](https://ohmyz.sh/) for plugins, though the lighter [zinit](https://github.com/zdharber/zinit) is worth a look if you find Oh My Zsh too heavy.
+- [Zsh](https://www.zsh.org/): the default on macOS since Catalina, so you might already be using it. I pair it with [Oh My Zsh](https://ohmyz.sh/) for plugins, though the lighter [zinit](https://github.com/zdharma-continuum/zinit) is worth a look if you find Oh My Zsh too heavy.
 - [Starship](https://starship.rs/): my prompt. It shows git status, language versions, and cloud context right in the prompt line. Works across shells and you barely need to configure it.
-- [Zoxide](https://github.com/ajeetdsouza/zoxide): probably the tool with the best effort-to-reward ratio on this list. It learns your most-used directories so you can type `z blog` instead of `cd ~/Documents/projects/my-blog`. Once you start using it, plain `cd` feels broken.
+- [Zoxide](https://github.com/ajeetdsouza/zoxide): **probably the tool with the best effort-to-reward ratio on this list**. It learns your most-used directories so you can type `z blog` instead of `cd ~/Documents/projects/my-blog`.
 
 ## Modern replacements for classic tools
 
-There is a whole wave of Rust and Go rewrites of classic Unix tools with better defaults and colour output. I still type plain `ls`, `cat`, and `grep` out of muscle memory. I do use [The Silver Searcher (`ag`)](https://github.com/ggreer/the_silver_searcher) for code search, which is already a big step up from `grep`. The rest are on my list to try. The screwdriver analogy applies here too: the originals work fine, these are just nicer to hold.
+There is a whole wave of Rust and Go rewrites of classic Unix tools with better defaults and colour output. I still type plain `ls`, `cat`, and `grep` out of muscle memory. I do use [The Silver Searcher (`ag`)](https://github.com/ggreer/the_silver_searcher) for code search, which is already a big step up from `grep`. The rest are on my list to try.
 
 | Classic | Modern replacement | Why |
 |---------|-------------------|-----|
@@ -39,11 +41,11 @@ There is a whole wave of Rust and Go rewrites of classic Unix tools with better 
 | `du` | [dust](https://github.com/bootandy/dust) | Visual directory size breakdown |
 | `top` | [btop](https://github.com/aristocratos/btop) | Beautiful resource monitor with mouse support |
 | `sed` | [sd](https://github.com/chmln/sd) | Simpler regex syntax, string literal mode |
-| `diff` | [delta](https://github.com/dandavella/delta) | Syntax highlighting, side-by-side view, git integration |
+| `diff` | [delta](https://github.com/dandavison/delta) | Syntax highlighting, side-by-side view, git integration |
 | `curl` | [xh](https://github.com/ducaale/xh) | Coloured output, simpler syntax for JSON APIs |
 | `man` | [tldr](https://tldr.sh/) | Community-maintained cheat sheets with practical examples |
 
-If you want to try these without changing your habits, alias them so your muscle memory keeps working:
+If you want to try these without changing your habits, **alias them so your muscle memory keeps working**:
 
 ```bash
 alias ls="eza --icons --group-directories-first"
@@ -60,16 +62,16 @@ alias man="tldr"
 
 ## File navigation
 
-- [fzf](https://github.com/junegunn/fzf): hard to explain until you try it. It is a fuzzy finder: you pipe anything into it and get an interactive selector. It gets interesting once you compose it with other tools, `rg "pattern" | fzf` to search code interactively, or `git log --oneline | fzf` to pick a commit. Once installed it also gives you `ctrl+t` for file search and `ctrl+r` for a much better history search.
+- [fzf](https://github.com/junegunn/fzf): hard to explain until you try it. It is a fuzzy finder: you pipe anything into it and get an interactive selector. **It gets interesting once you compose it with other tools**, `rg "pattern" | fzf` to search code interactively, or `git log --oneline | fzf` to pick a commit. Once installed it also gives you `ctrl+t` for file search and `ctrl+r` for a much better history search.
 
 ## Multiplexing
 
-- [tmux](https://github.com/tmux/tmux): the classic terminal multiplexer, and another tool that has survived the test of time. I use it mostly to keep dev servers running in the background while working in another pane. Persistent sessions mean you can disconnect and come back later without losing anything. Pair it with [tpm](https://github.com/tmux-plugins/tpm) for plugins.
+- [tmux](https://github.com/tmux/tmux): the classic terminal multiplexer, and another tool that has survived the test of time. I use it mostly to keep dev servers running in the background while working in another pane. **Persistent sessions mean you can disconnect and come back later without losing anything.** Pair it with [tpm](https://github.com/tmux-plugins/tpm) for plugins.
 
 ## Developer utilities
 
 - [jq](https://jqlang.github.io/jq/): if you work with JSON (and you probably do), this is essential. The query syntax takes a bit of learning, but it pays off fast. For a gentler start, try [jnv](https://github.com/ynqa/jnv), which gives you a live preview as you build your query.
-- [lazygit](https://github.com/jesseduffield/lazygit): I have this aliased to `lg` and I open it before almost every commit. It makes rebasing, staging individual hunks, and resolving conflicts much less painful than raw git commands. If git's CLI intimidates you, start here.
+- [lazygit](https://github.com/jesseduffield/lazygit): I have this aliased to `lg` and **I open it before almost every commit**. It makes rebasing, staging individual hunks, and resolving conflicts much less painful than raw git commands. If git's CLI intimidates you, start here.
 - [Fork](https://git-fork.com/): I use this alongside lazygit. `fork .` opens the current repo in a clean native GUI, which is useful when you need to visualise branch history or understand the big picture across branches.
 - [lazydocker](https://github.com/jesseduffield/lazydocker): same idea as lazygit but for Docker. View logs, restart containers, manage volumes, all from one TUI.
 - [tectonic](https://tectonic-typesetting.github.io/): if you use LaTeX, this saves a lot of pain. It downloads packages on demand, no manual `tlmgr` setup. `tectonic document.tex` just works.
@@ -86,16 +88,16 @@ Host dev
     IdentityFile ~/.ssh/my_key
 ```
 
-Then just `ssh dev`. Six characters instead of sixty. It also works with `scp`, `rsync`, and VS Code remote.
+**Then just `ssh dev`. Six characters instead of sixty.** It also works with `scp`, `rsync`, and VS Code remote.
 
 ## AI in the terminal
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code): the tool that prompted me to write this article. It runs in your terminal, reads your codebase, edits files, runs commands, and commits code. I now start most projects by typing `claude` rather than opening an editor. The terminal turns out to be a much better interface for AI than a chatbox, because it gives the model direct access to your filesystem, git history, and build tools. Going back to the screwdriver analogy, the terminal is the handle and the LLM the interchangeable bit.
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code): a CLI to use Claude for coding. It is the tool that prompted me to write this article.
 
 ## Learning resources
 
 - [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line): a long guide that I revisit from time to time. Covers everything from basic navigation to tricks I had never thought of.
-- [Modern Unix](https://github.com/ibraheemdev/modern-unix): where I discovered most of the tools in the table above.
+- [Modern Unix](https://github.com/ibraheemdev/modern-unix): **where I discovered most of the tools in the table above**.
 - [Julia Evans' zines](https://wizardzines.com/): the best way I know to build intuition about how networking, bash, git, and DNS actually work. Short and illustrated, and deeper than they look.
 - [Command Line Interface Guidelines](https://clig.dev/): if you are *building* CLI tools yourself, this is the style guide to follow.
 
