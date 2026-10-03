@@ -6,3 +6,5 @@ scripts/hugo-obsidian-sync/config.yaml
 # Hugo cache
 resources/
 resources/_gen/
+# Reading list, fetched at build time (scripts/fetch_reading_list.py)
+data/reading.json
