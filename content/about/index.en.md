@@ -9,9 +9,8 @@ Currently working at [Kingfisher](https://medium.com/kingfisher-technology/subpa
 
 During my PhD I studied the learning dynamics (reinforcement learning) of multi-agent systems, interpreted through game theory.
 
-[My blog]({{< relref "posts" >}})
-
 ## Elsewhere
 
+- [Blog]({{< relref "posts" >}}): articles I write
 - [GitHub](https://github.com/robinicole): code I write
 - [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/): professional background

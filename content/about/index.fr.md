@@ -9,9 +9,8 @@ Actuellement chez [Kingfisher](https://medium.com/kingfisher-technology/subpage/
 
 Pendant mon doctorat, j'ai étudié les dynamiques d'apprentissage (apprentissage par renforcement) des systèmes multi-agents, sous l'angle de la théorie des jeux.
 
-[Mon blog]({{< relref "posts" >}})
-
 ## Ailleurs
 
+- [Blog]({{< relref "posts" >}}) : les articles que j'écris
 - [GitHub](https://github.com/robinicole) : le code que j'écris
 - [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/) : parcours professionnel
