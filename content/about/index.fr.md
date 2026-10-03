@@ -9,7 +9,7 @@ Actuellement chez [Kingfisher](https://medium.com/kingfisher-technology/subpage/
 
 Pendant mon doctorat, j'ai étudié les dynamiques d'apprentissage (apprentissage par renforcement) des systèmes multi-agents, sous l'angle de la théorie des jeux.
 
-J'écris sur l'IA et la data science sur ce [blog]({{< relref "posts" >}}).
+[Mon blog]({{< relref "posts" >}})
 
 ## Ailleurs
 
