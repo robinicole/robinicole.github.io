@@ -9,6 +9,10 @@ Actuellement chez [Kingfisher](https://medium.com/kingfisher-technology/subpage/
 
 Pendant mon doctorat, j'ai étudié les dynamiques d'apprentissage (apprentissage par renforcement) des systèmes multi-agents, sous l'angle de la théorie des jeux.
 
+## Ce blog
+
+Le [blog]({{< relref "posts" >}}) est l'endroit où j'écris sur l'IA, les LLM, la data science et les outils que j'utilise au quotidien.
+
 ## Ailleurs
 
 - [GitHub](https://github.com/robinicole) : le code que j'écris
