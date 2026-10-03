@@ -9,7 +9,7 @@ Currently working at [Kingfisher](https://medium.com/kingfisher-technology/subpa
 
 During my PhD I studied the learning dynamics (reinforcement learning) of multi-agent systems, interpreted through game theory.
 
-On this [blog]({{< relref "posts" >}}) I write about AI, LLMs, data science and the tools I use.
+I write about AI and data science on this [blog]({{< relref "posts" >}}).
 
 ## Elsewhere
 
