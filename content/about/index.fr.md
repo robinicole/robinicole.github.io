@@ -13,4 +13,4 @@ Pendant mon doctorat, j'ai étudié les dynamiques d'apprentissage (apprentissag
 
 - [Blog]({{< relref "posts" >}}) : les articles que j'écris
 - [GitHub](https://github.com/robinicole) : le code que j'écris
-- [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/) : parcours professionnel
+- [LinkedIn](https://www.linkedin.com/in/robin-nicole-phd-54929349/)
