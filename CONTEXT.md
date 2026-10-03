@@ -38,6 +38,14 @@ _Avoid_: Thumbnail, cover, banner
 A static, evergreen piece of content that describes the author or advertises their work — categorically distinct from articles. Not part of the garden's knowledge content.
 _Avoid_: Article, post
 
+**Reading list**:
+The page at `/reading/` listing external content the author recommends, pulled from Raindrop.io at build time. Not part of the garden's own writing, and not a Page in the sense above.
+_Avoid_: Links page, blogroll
+
+**Bookmark**:
+One entry on the reading list: a Raindrop.io item tagged `blog`, shown with its title, source website, saved date and the author's note.
+_Avoid_: Link, raindrop
+
 **Source note**:
 A note in the author's personal Zettelkasten vault (distilled Permanent Notes, sourced Literature notes, raw Fleeting notes). Source material that feeds an article — the author's own thinking on a topic — but categorically not an article itself, the same way a Page is not an article. Consulted when drafting; never published directly.
 _Avoid_: Article, draft

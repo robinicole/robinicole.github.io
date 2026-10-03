@@ -96,6 +96,9 @@ The site is bilingual (English + French). English is the default language (weigh
 
 **Before committing changes to a post, check that both language versions are in sync.** If the original was modified, update the translation to match.
 
+### Reading list
+`/reading/` lists Raindrop.io bookmarks tagged `blog`, fetched at build time by `scripts/fetch_reading_list.py` into git-ignored `data/reading.json`. See `docs/reading-list.md` (local testing) and `docs/adr/0002-reading-list-from-raindrop.md` (design).
+
 ### Key Front Matter Fields
 ```yaml
 title: "Post Title"

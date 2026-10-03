@@ -1,0 +1,37 @@
+/* Reading list page (layouts/_default/reading.html). Uses PaperMod theme
+   variables so light and dark mode follow the theme toggle. */
+.reading-list {
+    list-style: none;
+    padding: 0;
+    margin: var(--gap) 0 0;
+}
+
+.post-content .reading-item {
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.post-content .reading-item:last-child {
+    border-bottom: none;
+}
+
+.post-content .reading-title {
+    box-shadow: none;
+    font-weight: 500;
+}
+
+.reading-meta {
+    color: var(--secondary);
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.post-content .reading-note {
+    margin: 6px 0 0;
+    font-size: 16px;
+}
+
+.reading-empty {
+    color: var(--secondary);
+}

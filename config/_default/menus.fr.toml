@@ -11,6 +11,11 @@
   weight = 10
 
 [[main]]
+  name = "Lectures"
+  pageRef = "reading"
+  weight = 12
+
+[[main]]
   name = "A propos"
   pageRef = "about"
   weight = 15
